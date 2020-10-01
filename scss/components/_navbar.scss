@@ -1,0 +1,103 @@
+/**
+ * _navbar.scss
+ * @author [Keisuke Suzuki](https://github.com/Ks5810)
+ * @description Styling for the navbar
+ */
+
+.navbar {
+  @include media-breakpoint-down(sm) {
+    padding: 1rem;
+  }
+  padding: $m-size;
+  background-color: $secondary;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  outline: none;
+  box-shadow: none;
+
+  .navbar-brand {
+    color: $primary;
+
+    &:hover {
+      color: darken($primary, 10%);
+    }
+
+    &:active,
+    &:focus {
+      color: darken($primary, 10%);
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  .navbar-nav {
+    padding: 1rem;
+    @include media-breakpoint-down(sm) {
+      padding: 0;
+    }
+    color: $primary;
+    &:active &:focus {
+      color: $focus;
+      outline: none;
+      box-shadow: none;
+    }
+    .nav-item {
+      & .active, &:active &:focus {
+        color: $focus;
+        outline: none;
+        box-shadow: none;
+      }
+    }
+    .nav-link {
+      text-align: center;
+      color: $primary;
+      cursor: pointer;
+      &:hover {
+        color: darken($primary, 10%);
+      }
+    }
+  }
+
+
+  .navbar-toggler {
+    font-size: 1.5rem;
+    color: $primary;
+    font-weight: bold;
+    &:active,
+    &:focus {
+      color: $focus;
+      outline: none;
+      box-shadow: none !important;
+    }
+    i {
+      background: none;
+    }
+  }
+
+
+  @include media-breakpoint-up(lg) {
+    padding: 1.5rem 0;
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+
+    .navbar-brand {
+      font-size: 1.75em;
+      transition: font-size 0.3s;
+    }
+    .navbar-nav {
+      margin-top: 1rem;
+    }
+    .navbar-shrink {
+      padding-top: 0.9rem;
+      padding-bottom: 0.9rem;
+
+      .navbar-brand {
+        font-size: 1.5em;
+
+        &:active,
+        &:focus {
+          color: $focus;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,700;1,700&display=swap");
+@import url("../public/assets/fonts/fontello/css/icons.css");
+
+@import "base/fonts";
+@import "base/variables";
+@import "~bootstrap-scss";
+
+@import "base/page";
+@import "base/class";
+@import "components/github-markdown";
+@import "components/blog";
+@import "components/post";
+@import "components/divider";
+@import "components/projects";
+@import "components/about";
+@import "components/navbar";
+@import "components/contact";
+@import "components/footer";
+@import "components/loader";
+@import "components/404";
