@@ -8,15 +8,10 @@
 @import "~bootstrap-scss";
 
 @import "base/page";
-@import "base/class";
+@import "components/bio";
+@import "components/post-card";
 @import "components/github-markdown";
 @import "components/blog";
 @import "components/post";
-@import "components/divider";
-@import "components/projects";
-@import "components/about";
 @import "components/navbar";
-@import "components/contact";
-@import "components/footer";
-@import "components/loader";
 @import "components/404";

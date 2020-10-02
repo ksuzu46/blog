@@ -1,11 +1,8 @@
 .markdown-body {
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  line-height: 1.5;
-  color: $primary;
+  line-height: 1.6;
+  color: darken($primary, 10%);
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
   font-size: 16px;
-  line-height: 1.5;
   word-wrap: break-word;
 
   .octicon {
@@ -61,7 +58,7 @@
 
   a {
     background-color: initial;
-    color: $anchor;
+    color: $link-color;
     text-decoration: none;
 
     &:active {
@@ -129,7 +126,7 @@
     overflow: hidden;
     background: transparent;
     border: 0;
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid $section;
 
     &:after {
       display: table;
@@ -193,11 +190,11 @@
   }
 
   h4 {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   h5 {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   h5,
@@ -206,7 +203,7 @@
   }
 
   h6 {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   p {
@@ -262,11 +259,11 @@
   &:checked + .radio-label {
     position: relative;
     z-index: 1;
-    border-color: $border-color;
+    border-color: $section;
   }
 
   .border {
-    border: 1px solid $border-color !important;
+    border: 1px solid $section !important;
   }
 
   .border-0 {
@@ -274,7 +271,7 @@
   }
 
   .border-bottom {
-    border-bottom: 1px solid $border-color !important;
+    border-bottom: 1px solid $section !important;
   }
 
   .rounded-1 {
@@ -645,13 +642,13 @@
     height: .25em;
     padding: 0;
     margin: 24px 0;
-    background-color: $border-color;
+    background-color: $section;
     border: 0;
   }
 
   blockquote {
     padding: 0 1em;
-    border-left: .25em solid $block-quote-left-border;
+    border-left: .25em solid $section;
   }
 
   blockquote > :first-child {
@@ -681,30 +678,30 @@
   h1,
   h2 {
     padding-bottom: .3em;
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid $section;
     font-size: 1.5em;
   }
 
   h3 {
     padding-bottom: .25em;
-    font-size: 1.25em;
-    border-bottom: 1px solid $border-color;
+    font-size: 1.3em;
+    border-bottom: 1px solid $section;
   }
 
   h4 {
     padding-bottom: .2em;
-    font-size: 1em;
-    border-bottom: 1px solid $border-color;
+    font-size: 1.2em;
+    border-bottom: 1px solid $section;
   }
 
   h5 {
     padding-bottom: .2em;
-    font-size: .875em;
-    border-bottom: 1px solid $border-color;
+    font-size: 1.1em;
+    border-bottom: 1px solid $section;
   }
 
   h6 {
-    font-size: .75em;
+    font-size: 1em;
   }
 
   ol,
@@ -791,7 +788,7 @@
   code {
     padding: .2em .4em;
     margin: 0;
-    font-size: 85%;
+    font-size: 80%;
     background-color: $code-bg;
     border-radius: 3px;
   }
@@ -801,9 +798,8 @@
   }
 
   pre > code {
-    padding: 0;
-    margin: 0;
     font-size: 100%;
+    line-height: 1.2;
     word-break: normal;
     white-space: pre;
     background: transparent;
@@ -821,19 +817,23 @@
 
   .highlight pre,
   pre {
-    padding: 16px;
+    padding: 1rem;
     overflow: auto;
-    font-size: 85%;
-    line-height: 1.45;
+    font-size: 70%;
+    line-height: 1.6;
+    @include media-breakpoint-down(sm){
+      font-size: 53%;
+      line-height: 1.4;
+    }
     border-radius: 3px;
   }
 
   pre code {
     display: inline;
-    width: auto;
+    width: 90%;
     padding: 0;
     margin: 0;
-    overflow: visible;
+    overflow: auto;
     line-height: inherit;
     word-wrap: normal;
     background-color: initial;

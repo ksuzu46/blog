@@ -4,20 +4,23 @@
  * @description Styling for the navbar
  */
 
-.navbar {
-  @include media-breakpoint-down(sm) {
-    padding: 1rem;
-  }
-  padding: $m-size;
-  background-color: $secondary;
-  font-family: $headings-font-family;
-  font-weight: $headings-font-weight;
-  outline: none;
-  box-shadow: none;
+.header-tag {
+  width: 100%;
+  padding: 2rem 0;
 
-  .navbar-brand {
+  background-color: $back-ground;
+  border-bottom: solid 1px $section;
+  box-shadow: 0 2px 4px rgba(0,0,0,.4);
+}
+
+.header-inner{
+  position: relative;
+  font-size: 200%;
+
+  a,
+  h1,
+  h3 {
     color: $primary;
-
     &:hover {
       color: darken($primary, 10%);
     }
@@ -28,76 +31,27 @@
       outline: none;
       box-shadow: none;
     }
+    width: 100%;
   }
-
-  .navbar-nav {
-    padding: 1rem;
-    @include media-breakpoint-down(sm) {
-      padding: 0;
-    }
-    color: $primary;
-    &:active &:focus {
-      color: $focus;
-      outline: none;
-      box-shadow: none;
-    }
-    .nav-item {
-      & .active, &:active &:focus {
-        color: $focus;
-        outline: none;
-        box-shadow: none;
-      }
-    }
-    .nav-link {
-      text-align: center;
-      color: $primary;
-      cursor: pointer;
-      &:hover {
-        color: darken($primary, 10%);
-      }
+  .logo {
+    display: block;
+    width: 165px;
+    height: 37px;
+    @include media-breakpoint-down(xs){
+      margin: 0 auto;
     }
   }
-
-
-  .navbar-toggler {
-    font-size: 1.5rem;
-    color: $primary;
-    font-weight: bold;
-    &:active,
-    &:focus {
-      color: $focus;
-      outline: none;
-      box-shadow: none !important;
-    }
-    i {
-      background: none;
-    }
+  .logo-link {
+    display: block;
   }
-
-
-  @include media-breakpoint-up(lg) {
-    padding: 1.5rem 0;
-    transition: padding-top 0.3s, padding-bottom 0.3s;
-
-    .navbar-brand {
-      font-size: 1.75em;
-      transition: font-size 0.3s;
-    }
-    .navbar-nav {
-      margin-top: 1rem;
-    }
-    .navbar-shrink {
-      padding-top: 0.9rem;
-      padding-bottom: 0.9rem;
-
-      .navbar-brand {
-        font-size: 1.5em;
-
-        &:active,
-        &:focus {
-          color: $focus;
-        }
-      }
+  .message-link {
+    position: absolute;
+    right: 0;
+    top: 7px;
+    display: block;
+    width: 34px;
+    &:hover {
+      top: 5px;
     }
   }
 }

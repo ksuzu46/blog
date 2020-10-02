@@ -10,11 +10,31 @@ $navy: #0f3b64 !default;
 $purple-baseline: #161748 !default;
 $pink-highlight: #f95d9b !default;
 $blue-light: #39a0ca !default;
-$back-ground: #292e47 !default;
+$back-ground: #171927 !default;
 $focus: #689cc5 !default;
 $back-ground-list: #434d6d !default;
 $nav-focus: #e1b2c4;
 $link-color: rgba(103, 154, 101, 0.97) !default;
+
+$base: #121212 !default;
+$section: #24283d !default;
+$background: #21242d !default; //#141c23
+$blackLight: #313746 !default;
+$gray: #727d86 !default;
+$silver: #969fa7 !default;
+$whitesmoke: #f1f4f7 !default;
+$highlight: #20a8ea !default;
+$red: #f7615f　!default;
+$orange: #ffa22b !default;
+$gradient: linear-gradient(-45deg,#ffa649,#f7645b,#805ed4) !default;
+
+$bio-width: 290px;
+$max-width: 1100px;
+
+$side-space-small: 20px;
+$side-space-large: 1.5em;
+$content-small: 20px;
+$content-large: 2.5em;
 
 // Navbar size
 $s-size: 2.7rem;
@@ -28,8 +48,8 @@ $container-l-size: 5.0rem;
 
 
 // Override Bootstrap colors
-$primary: #b9b9c1 !default;
-$secondary: #0C102D !default;
+$primary: #9e9ea9 !default;
+$secondary: $section !default;
 $success: #93dbe9 !default;
 $danger: $pink-highlight !default;
 $info: #b3b7e2 !default;

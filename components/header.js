@@ -1,11 +1,16 @@
 import Link from 'next/link';
+import ContentWrapper from "./ContentWrapper";
 
 export default function Header() {
-  return (
-    <h2 className="text-2xl md:text-4xl font-bold tracking-tight md:tracking-tighter leading-tight mb-20 mt-8">
-      <Link href="/">
-        <a className="hover:underline">Keisuke Suzuki</a>
-      </Link>
-    </h2>
-  );
+    return (
+        <header className="header-tag">
+            <ContentWrapper>
+                <div className="header-inner">
+                    <h1>
+                        <Link href="/">{`ksuzu's blog`}</Link>
+                    </h1>
+                </div>
+            </ContentWrapper>
+        </header>
+    );
 }
