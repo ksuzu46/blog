@@ -1,5 +1,5 @@
 {
-  "name": "blog-starter",
+  "name": "blog",
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
-    "apollo-server-micro": "^2.17.0",
     "axios": "^0.20.0",
     "babel-eslint": "^10.1.0",
     "bootstrap-scss": "^4.5.2",
@@ -24,8 +23,6 @@
     "eslint-plugin-react-hooks": "^4.1.2",
     "file-loader": "^6.1.0",
     "global": "^4.4.0",
-    "graphql": "^15.3.0",
-    "graphql-tag": "^2.11.0",
     "gray-matter": "^4.0.2",
     "html-react-parser": "^0.14.0",
     "next": "latest",
@@ -40,7 +37,6 @@
     "remark-html": "10.0.0",
     "sass-loader": "^10.0.2",
     "style-loader": "^1.2.1",
-    "styled-components": "^5.2.0",
     "url-loader": "^4.1.0"
   },
   "devDependencies": {
