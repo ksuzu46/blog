@@ -6,9 +6,9 @@
 
 module.exports = {
     apps : [{
-        name: 'portfolio',
+        name: 'blog',
         script: 'yarn',
-        cwd: '/home/ec2-user/portfolio',
+        cwd: '/home/ubuntu/blog',
         interpreter: '/bin/bash',
         args: 'start',
         instances: 1,
