@@ -5,6 +5,7 @@ import Meta from '../components/meta';
 import {getAllPosts} from '../lib/api';
 import Header from "../components/header";
 import ContentWrapper from "../components/ContentWrapper";
+import Footer from "../components/Footer";
 
 export default function Index({allPosts}) {
     const heroPost = allPosts[0];
@@ -31,6 +32,7 @@ export default function Index({allPosts}) {
                     <Bio/>
                 </div>
             </ContentWrapper>
+            <Footer/>
         </>
     );
 }

@@ -6,6 +6,7 @@ import PostHeader from '../../components/post-header';
 import ContentWrapper from '../../components/ContentWrapper';
 import {getAllPosts, getPostBySlug} from '../../lib/api';
 import markdownToHtml from '../../lib/markdownToHtml';
+import Footer from "../../components/Footer";
 import Bio from "../../components/Bio";
 
 
@@ -38,6 +39,7 @@ export default function Post({post, morePosts, preview}) {
                     <Bio/>
                 </div>
             </ContentWrapper>
+            <Footer />
         </>
     );
 }

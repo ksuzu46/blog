@@ -1,0 +1,17 @@
+.footer-content {
+  padding: 0.1em 0;
+}
+
+.footer-inner {
+  margin-top: 3em;
+  text-align: center;
+  padding: 1.5em;
+  border-top: solid 1px $section;
+  color: $primary;
+  font-size: 14px;
+
+  a {
+    color: $primary;
+    text-decoration: underline;
+  }
+}
