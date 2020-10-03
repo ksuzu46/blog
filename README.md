@@ -4,7 +4,7 @@
 My personal blog inspired by [CatKnows] and [Blog Starter][blog-starter].
 
 ### Licence
-MIT (except for images/icons/blog contents)
+MIT (except for images/icons)
 
 You are not allowed to use or distribute images/icons included in this project.
 
