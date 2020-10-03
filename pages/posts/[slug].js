@@ -28,6 +28,8 @@ export default function Post({post, morePosts, preview}) {
                                     title={post.title}
                                     date={post.slug}
                                     slug={post.slug}
+                                    category={post.category}
+                                    emojo={post.emoji}
                                 />
                                 <PostBody content={post.content}/>
                             </div>
@@ -45,10 +47,10 @@ export async function getStaticProps({params}) {
         'title',
         'date',
         'slug',
-        'author',
+        'category',
+        'emoji',
         'content',
         'ogImage',
-        'coverImage',
     ]);
 
     const content = await markdownToHtml(post.content || '');

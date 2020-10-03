@@ -1,24 +1,34 @@
 import Link from 'next/link';
+import twemoji from "twemoji";
 import DateFormatter from './date-formatter';
 
-export default function PostPreview({
-                                        title,
-                                        coverImage,
-                                        date,
-                                        excerpt,
-                                        author,
-                                        slug,
-                                    }) {
+const MyLink = React.forwardRef(({onClick, href, emoji, title, date}, ref) => {
+    return (
+        <a href={href} onClick={onClick} ref={ref} className="post-card-link">
+            <div className="post-card-emoji"
+               dangerouslySetInnerHTML={{__html: emoji}} />
+            <div className="post-card-content">
+                <h3>{title}</h3>
+                <DateFormatter dateString={date}/>
+            </div>
+        </a>
+    )
+})
+
+export default function PostPreview({title, date, category, emoji, slug,}) {
+    const parsedEmoji = twemoji.parse(emoji || "🐱", {
+        folder: "svg",
+        ext: ".svg"
+    });
+
     return (
         <div className="post-card-wrapper">
-            <div className="post-card-link">
-                <Link as={`/posts/${slug}`} href="/posts/[slug]">
-                    <div className="post-card-content">
-                        <h3>{title}</h3>
-                        <DateFormatter dateString={date}/>
-                    </div>
-                </Link>
-            </div>
+            <Link
+                href={`/posts/${encodeURIComponent(slug)}`}
+                passHref
+            >
+                <MyLink emoji={parsedEmoji} title={title} date={date} />
+            </Link>
         </div>
     );
 }

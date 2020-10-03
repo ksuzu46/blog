@@ -53,9 +53,9 @@ a {
   :focus{
     outline: none;
   }
-}
-ol, ul, li {
-  list-style: none;
+  &:hover {
+    text-decoration: none;
+  }
 }
 blockquote, q {
   quotes: none;
@@ -104,12 +104,13 @@ input {
 
 .content {
   margin-top: 3em;
+  margin-bottom: 3em;
   display: flex;
   min-height: 85vh;
   align-items: flex-start;
 
   @include media-breakpoint-down(sm) {
-    margin-top: 2em;
+    display: block;
   }
   @include media-breakpoint-down(xs) {
     display: block;
@@ -119,7 +120,10 @@ input {
 .main-wrapper {
   width: calc(100% - #{$bio-width - 40px});
   margin-right: 40px;
-  @include media-breakpoint-down(xs) {
+  @include media-breakpoint-up(md) {
+    padding-bottom: 10rem;
+  }
+  @include media-breakpoint-down(sm) {
     width: 100%;
   }
 }

@@ -1,6 +1,7 @@
 import MoreStories from '../components/more-stories';
 import HeroPost from '../components/hero-post';
 import Bio from '../components/Bio';
+import Meta from '../components/meta';
 import {getAllPosts} from '../lib/api';
 import Header from "../components/header";
 import ContentWrapper from "../components/ContentWrapper";
@@ -18,11 +19,10 @@ export default function Index({allPosts}) {
                             heroPost && (
                                 <HeroPost
                                     title={heroPost.title}
-                                    coverImage={heroPost.coverImage}
                                     date={heroPost.slug}
-                                    author={heroPost.author}
                                     slug={heroPost.slug}
-                                    excerpt={heroPost.excerpt}
+                                    category={heroPost.category}
+                                    emoji={heroPost.emoji}
                                 />
                             )}
                         {morePosts.length > 0 &&
@@ -42,9 +42,8 @@ export async function getStaticProps() {
         'layout',
         'date',
         'slug',
-        'author',
-        'coverImage',
-        'excerpt',
+        'category',
+        'emoji'
     ]);
 
     return {

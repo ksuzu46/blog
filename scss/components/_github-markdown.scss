@@ -10,17 +10,9 @@
     fill: currentColor;
     vertical-align: text-bottom;
   }
-
-  .anchor {
-    float: left;
-    line-height: 1;
-    margin-left: -20px;
-    padding-right: 4px;
-    &:focus {
-      outline: none;
-    }
+  sup {
+    font-size: 60%;
   }
-
   h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
     margin-bottom: 0;
@@ -67,7 +59,7 @@
 
     &:hover {
       outline-width: 0;
-      text-decoration: underline;
+      color: darken($link-color, 5%);
     }
   }
 
@@ -232,6 +224,9 @@
   ul ol ol,
   ul ul ol {
     list-style-type: lower-alpha;
+    li::before {
+      color: $primary;
+    }
   }
 
   dd {
@@ -785,6 +780,11 @@
     padding-right: 20px;
   }
 
+  pre {
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+  }
   code {
     padding: .2em .4em;
     margin: 0;
@@ -793,15 +793,9 @@
     border-radius: 3px;
   }
 
-  pre {
-    word-wrap: normal;
-  }
-
   pre > code {
     font-size: 100%;
     line-height: 1.2;
-    word-break: normal;
-    white-space: pre;
     background: transparent;
     border: 0;
   }
@@ -812,19 +806,18 @@
 
   .highlight pre {
     margin-bottom: 0;
-    word-break: normal;
   }
 
   .highlight pre,
   pre {
     padding: 1rem;
     overflow: auto;
-    font-size: 70%;
+    font-size: 75%;
     line-height: 1.6;
-    @include media-breakpoint-down(sm){
-      font-size: 53%;
-      line-height: 1.4;
-    }
+    //@include media-breakpoint-down(sm){
+    //  font-size: 53%;
+    //  line-height: 1.4;
+    //}
     border-radius: 3px;
   }
 
@@ -835,7 +828,6 @@
     margin: 0;
     overflow: auto;
     line-height: inherit;
-    word-wrap: normal;
     background-color: initial;
     border: 0;
   }

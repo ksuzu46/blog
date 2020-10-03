@@ -1,5 +1,5 @@
 /**
- * _navbar.scss
+ * _header.scss
  * @author [Keisuke Suzuki](https://github.com/Ks5810)
  * @description Styling for the navbar
  */
@@ -23,6 +23,7 @@
     color: $primary;
     &:hover {
       color: darken($primary, 10%);
+      text-decoration: none;
     }
 
     &:active,

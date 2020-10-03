@@ -1,6 +1,6 @@
 .bio-wrapper {
   position: sticky;
-  top: 2em;
+  top: 3em;
   width: $bio-width;
   padding: 1.5em;
   font-size: 15.5px;
@@ -8,13 +8,15 @@
   border-radius: 4px;
   box-shadow: 0 2px 4px darken($section, 10%);
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(sm) {
     position: relative;
-    margin: 2em 0;
     width: 100%;
+    margin-bottom: 3em;
   }
   @include media-breakpoint-down(xs) {
     padding: 1.3em 1em;
+    margin-bottom: 3em;
+
   }
 }
 
@@ -38,6 +40,7 @@
 
     &:hover {
       color: darken($primary, 10%);
+      text-decoration: none;
     }
 
     &:active,
@@ -83,18 +86,17 @@
 .bio-link {
   width: 33.3%;
   display: block;
-  font-weight: 500;
-  font-size: 0.8em;
+  font-weight: 600;
+  font-size: 0.9em;
   line-height: 30px;
-  color: $gray;
 
   a {
+    color: $primary;
     letter-spacing: 1px;
-    font-size: 1.3em;
-    color: $gray;
 
     &:hover {
-      color: $gray;
+      color: darken($primary, 10%);
+      text-decoration: none;
     }
 
     &:active,

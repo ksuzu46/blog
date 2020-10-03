@@ -3,18 +3,22 @@
  * @author [Keisuke Suzuki](https://github.com/Ks5810)
  */
 
-.blog, .contributions {
-  margin: 1.5em 0 1em;
+.hero-post {
+ padding-bottom: 2rem;
+  @include media-breakpoint-down(xs){
+    padding-bottom: 1rem;
+  }
 }
-
 
 .blog-post-heading-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  @include media-breakpoint-down(sm){
+  padding-bottom: 1rem;
+  @include media-breakpoint-down(xs){
     flex-direction: column;
+    padding-bottom: 0;
   }
 }
 
@@ -25,7 +29,7 @@
   color: $primary;
   @include media-breakpoint-down(sm) {
     font-size: 2rem;
-    padding: 0;
+    padding-bottom: 0;
     align-self: flex-start;
   }
 }
