@@ -1,3 +1,5 @@
+import {myEmail} from "../lib/constants";
+
 const author = "ksuzu";
 const bioText = "A junior software developer looking for a job"
 const avatarUrl = '/assets/images/gh_avator.png';
@@ -35,8 +37,7 @@ const Bio = () => {
                         </a>
                     </div>
                     <div className="bio-link">
-                        <a className="bio-link--email"
-                           href="email:keisuke.suzuki46@gmail.com">
+                        <a className="bio-link--email" href={`mailto:${myEmail}`}>
                             <img src={svgEmail} alt="Email"/>
                             {`E-mail`}
                         </a>
