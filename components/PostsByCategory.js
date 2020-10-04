@@ -1,9 +1,9 @@
-import PostPreview from '../components/post-preview'
+import PostPreview from './PostPreview'
 
-export default function MoreStories({posts}) {
+export default function PostsByCategory({ posts, category }) {
     return (
         <>
-            <h1> Other Posts </h1>
+            <h1> {category} </h1>
             <div>
                 {posts.map((post) => (
                     <PostPreview

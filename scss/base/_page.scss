@@ -94,7 +94,7 @@ input {
   max-width: $max-width;
   margin: 0 auto;
   padding: 0 $side-space-large;
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     max-width: 760px;
   }
   @include media-breakpoint-down(xs) {
@@ -103,19 +103,19 @@ input {
 }
 
 .content {
-  margin-top: 3em;
+  margin-top: 2em;
   margin-bottom: 3em;
   display: flex;
   min-height: 85vh;
   align-items: flex-start;
 
-  @include media-breakpoint-down(sm) {
-    margin-top: 2em;
-    margin-bottom: 2em;
+  @include media-breakpoint-down(md) {
     display: block;
   }
+
   @include media-breakpoint-down(xs) {
-    display: block;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -123,7 +123,7 @@ input {
   width: calc(100% - #{$bio-width - 40px});
   margin-right: 40px;
 
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(md) {
     width: 100%;
   }
 }

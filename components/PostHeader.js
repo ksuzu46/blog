@@ -1,6 +1,6 @@
 import axios from 'axios';
-import Avatar from './avatar';
-import DateFormatter from './date-formatter';
+import Avatar from './Avatar';
+import DateFormatter from './DateFormatter';
 
 export default function PostHeader({ title, date }) {
     

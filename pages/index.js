@@ -1,11 +1,13 @@
-import MoreStories from '../components/more-stories';
-import HeroPost from '../components/hero-post';
+import OtherPosts from '../components/OtherPosts';
+import HeroPost from '../components/HeroPost';
 import Bio from '../components/Bio';
-import Meta from '../components/meta';
+import Meta from '../components/Meta';
 import {getAllPosts} from '../lib/api';
-import Header from "../components/header";
+import Header from "../components/Header";
 import ContentWrapper from "../components/ContentWrapper";
 import Footer from "../components/Footer";
+import {useRouter} from "next/router";
+import CategoryMenu from "../components/CategoryMenu";
 
 export default function Index({allPosts}) {
     const heroPost = allPosts[0];
@@ -16,6 +18,7 @@ export default function Index({allPosts}) {
             <ContentWrapper>
                 <div className="content">
                     <div className="main-wrapper">
+                        <CategoryMenu/>
                         {
                             heroPost && (
                                 <HeroPost
@@ -27,7 +30,7 @@ export default function Index({allPosts}) {
                                 />
                             )}
                         {morePosts.length > 0 &&
-                        <MoreStories posts={morePosts}/>}
+                        <OtherPosts posts={morePosts}/>}
                     </div>
                     <Bio/>
                 </div>
@@ -41,11 +44,11 @@ export async function getStaticProps() {
     const allPosts = getAllPosts([
         'title',
         'subtitle',
-        'layout',
         'date',
         'slug',
         'category',
-        'emoji'
+        'emoji',
+        'content'
     ]);
 
     return {

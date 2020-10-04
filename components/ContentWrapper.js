@@ -1,4 +1,4 @@
-import Meta from '../components/meta'
+import Meta from './Meta'
 
 export default function ContentWrapper({ preview, children }) {
   return (

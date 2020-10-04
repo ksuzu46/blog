@@ -15,8 +15,12 @@ module.exports = withSass({
             }, {
                 test: /\.md$/,
                 use: 'raw-loader',
-            }
+            },
         )
+        config.node = {
+                fs: 'empty'
+        }
+
         return config
     }
 })

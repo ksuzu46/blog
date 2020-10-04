@@ -1,17 +1,19 @@
 import {useRouter} from 'next/router';
 import ErrorPage from 'next/error';
-import PostBody from '../../components/post-body';
-import Header from '../../components/header';
-import PostHeader from '../../components/post-header';
-import ContentWrapper from '../../components/ContentWrapper';
-import {getAllPosts, getPostBySlug} from '../../lib/api';
-import markdownToHtml from '../../lib/markdownToHtml';
-import Footer from "../../components/Footer";
-import Bio from "../../components/Bio";
+import PostBody from '../components/PostBody';
+import Header from '../components/Header';
+import PostHeader from '../components/PostHeader';
+import ContentWrapper from '../components/ContentWrapper';
+import {getAllPosts, getPostBySlug} from '../lib/api';
+import markdownToHtml from '../lib/markdownToHtml';
+import Footer from "../components/Footer";
+import Bio from "../components/Bio";
+import CategoryMenu from "../components/CategoryMenu";
 
 
 export default function Post({post, morePosts, preview}) {
     const router = useRouter();
+    console.log(router);
     if (!router.isFallback && !post?.slug) {
         return <ErrorPage statusCode={404}/>;
     }
@@ -21,6 +23,7 @@ export default function Post({post, morePosts, preview}) {
             <ContentWrapper>
                 <div className="content">
                     <div className="main-wrapper">
+                        <CategoryMenu/>
                         {router.isFallback ? (
                             `Loading…`
                         ) : (
@@ -44,6 +47,8 @@ export default function Post({post, morePosts, preview}) {
     );
 }
 
+// getStaticProps() fetches data at build time
+// use getServerSideProps() when SSR is needed
 export async function getStaticProps({params}) {
     const post = getPostBySlug(params.slug, [
         'title',
@@ -52,7 +57,6 @@ export async function getStaticProps({params}) {
         'category',
         'emoji',
         'content',
-        'ogImage',
     ]);
 
     const content = await markdownToHtml(post.content || '');
@@ -66,6 +70,7 @@ export async function getStaticProps({params}) {
     };
 }
 
+// getStaticPath()
 export async function getStaticPaths() {
     const posts = getAllPosts(['slug']);
 
