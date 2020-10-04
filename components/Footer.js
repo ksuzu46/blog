@@ -5,10 +5,10 @@ const Footer = () => {
   return (
     <div className="footer-content">
         <div className="footer-inner">
-            <a href={ghUrl} rel="nofollow">
+            <a href={ `${ghUrl}/blog` } rel="nofollow">
               SourceCode
             </a>
-          <div>© { new Date().getFullYear() } { ghUsername }</div>
+          <div>© 2020 { ghUsername }</div>
         </div>
     </div>
   );
