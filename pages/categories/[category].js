@@ -1,40 +1,25 @@
-import {useRouter} from 'next/router';
-import ErrorPage from 'next/error';
-import PostBody from '../../components/PostBody';
-import Header from '../../components/Header';
-import PostHeader from '../../components/PostHeader';
 import ContentWrapper from '../../components/ContentWrapper';
-import {getAllPosts, getPostBySlug, getPostsByCategory} from '../../lib/api';
-import markdownToHtml from '../../lib/markdownToHtml';
-import Footer from "../../components/Footer";
+import {getAllPosts, getPostsByCategory} from '../../lib/api';
 import Bio from "../../components/Bio";
-import PostPreview from "../../components/PostPreview";
-import HeroPost from "../../components/HeroPost";
-import OtherPosts from "../../components/OtherPosts";
 import PostsByCategory from "../../components/PostsByCategory";
 import CategoryMenu from "../../components/CategoryMenu";
 
-export default function Category({ postsByCategory, category }) {
-    const router = useRouter();
 
+export default function Category({postsByCategory, category}) {
     return (
-        <>
-            <Header/>
-            <ContentWrapper>
-                <div className="content">
-                    <div className="main-wrapper">
-                        <CategoryMenu/>
-                        { postsByCategory.length > 0 ?
-                            <PostsByCategory
-                                posts={postsByCategory}
-                                category={category}/>:
-                            <p>no posts for this category</p>}
-                    </div>
-                    <Bio/>
+        <ContentWrapper>
+            <div className="content">
+                <div className="main-wrapper">
+                    <CategoryMenu/>
+                    {postsByCategory.length > 0 ?
+                        <PostsByCategory
+                            posts={postsByCategory}
+                            category={category}/> :
+                        <p>no posts for this category</p>}
                 </div>
-            </ContentWrapper>
-            <Footer/>
-        </>
+                <Bio/>
+            </div>
+        </ContentWrapper>
     );
 }
 

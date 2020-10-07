@@ -9,8 +9,8 @@ import svgDev from "../public/assets/images/dev.svg";
 const MyLink = React.forwardRef(({onClick, href, catIcon, catName}, ref) => {
     return (
         <a href={href} onClick={onClick} ref={ref}>
-                <div className="cat-item__image">
-                    <div className="cat-item__image-wrapper">
+            <div className="cat-item__image">
+                <div className="cat-item__image-wrapper">
                     <img src={catIcon} alt={catName}/>
                 </div>
             </div>

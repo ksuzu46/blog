@@ -6,7 +6,7 @@ const MyLink = React.forwardRef(({onClick, href, emoji, title, date}, ref) => {
     return (
         <a href={href} onClick={onClick} ref={ref} className="post-card-link">
             <div className="post-card-emoji"
-               dangerouslySetInnerHTML={{__html: emoji}} />
+                 dangerouslySetInnerHTML={{__html: emoji}}/>
             <div className="post-card-content">
                 <h3>{title}</h3>
                 <DateFormatter dateString={date}/>
@@ -27,7 +27,7 @@ export default function PostPreview({title, date, category, emoji, slug}) {
                 href={`/${encodeURIComponent(slug)}`}
                 passHref
             >
-                <MyLink emoji={parsedEmoji} title={title} date={date} />
+                <MyLink emoji={parsedEmoji} title={title} date={date}/>
             </Link>
         </div>
     );
