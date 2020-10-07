@@ -13,7 +13,6 @@ import CategoryMenu from "../components/CategoryMenu";
 
 export default function Post({post, morePosts, preview}) {
     const router = useRouter();
-    console.log(router);
     if (!router.isFallback && !post?.slug) {
         return <ErrorPage statusCode={404}/>;
     }
