@@ -1,6 +1,6 @@
 import PostPreview from './PostPreview'
 
-export default function PostsByCategory({posts, category}) {
+export default function PostsByLanguage({posts, slug, lang}) {
     return (
         <div>
             {posts.map((post) => (

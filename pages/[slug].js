@@ -28,7 +28,8 @@ export default function Post({post}) {
                                 date={post.slug}
                                 slug={post.slug}
                                 category={post.category}
-                                emojo={post.emoji}
+                                emoji={post.emoji}
+                                lang={post.lang}
                             />
                             <PostBody content={post.content}/>
                         </div>
@@ -49,6 +50,7 @@ export async function getStaticProps({params}) {
         'slug',
         'category',
         'emoji',
+        'lang',
         'content',
     ]);
 

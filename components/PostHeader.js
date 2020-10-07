@@ -1,6 +1,7 @@
 import DateFormatter from './DateFormatter';
+import LanguageLabel from "./LanguageLabel";
 
-export default function PostHeader({title, date}) {
+export default function PostHeader({title, date, lang}) {
 
     return (
         <>
@@ -10,6 +11,7 @@ export default function PostHeader({title, date}) {
                     <DateFormatter dateString={date}/>
                 </h6>
             </div>
+            <LanguageLabel lang={lang}/>
         </>
     );
 }

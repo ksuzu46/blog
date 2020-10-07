@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import {myEmail} from "../lib/constants";
 
 const author = "ksuzu";
@@ -9,14 +11,15 @@ const svgResume = '/assets/images/resume.svg';
 const svgPortfolio = "/assets/images/portfolio.svg";
 const ghLink = "https://github.com/Ks5810";
 
+
 const Bio = () => {
     return (
         <div className="bio-wrapper">
             <div className="bio-header">
                 <img className="avatar-image" src={avatarUrl} alt={author}/>
                 <div className="bio-name">
-                    <a href={ghLink}>{author}
-                    </a>
+                    <Link href='/'>{author}
+                    </Link>
                 </div>
             </div>
             <div className="bio-main">

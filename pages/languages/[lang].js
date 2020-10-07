@@ -1,21 +1,22 @@
 import ContentWrapper from '../../components/ContentWrapper';
-import {getAllPosts, getPostsByCategory} from '../../lib/api';
+import {getAllPosts, getPostsByLanguage} from '../../lib/api';
 import Bio from "../../components/Bio";
 import PostsByCategory from "../../components/PostsByCategory";
 import CategoryMenu from "../../components/CategoryMenu";
+import PostsByLanguage from "../../components/PostsByLanguage";
 
 
-export default function Category({postsByCategory, category}) {
+export default function Lang({postsByLanguage, lang}) {
     return (
         <ContentWrapper>
             <div className="content">
                 <div className="main-wrapper">
                     <CategoryMenu/>
-                    {postsByCategory.length > 0 ?
-                        <PostsByCategory
-                            posts={postsByCategory}
-                            category={category}/> :
-                        <p>no posts for this category</p>}
+                    {postsByLanguage.length > 0 ?
+                        <PostsByLanguage
+                            posts={postsByLanguage}
+                            lang={lang}/> :
+                        <p>no posts for this language</p>}
                 </div>
                 <Bio/>
             </div>
@@ -37,25 +38,25 @@ export async function getStaticProps({params}) {
         'content'
     ]);
 
-    const postsByCategory = getPostsByCategory(params.category, allPosts);
+    const postsByLanguage = getPostsByLanguage(params.lang, allPosts);
 
     return {
         props: {
-            category: params.category,
-            postsByCategory
+            lang: params.lang,
+            postsByLanguage
         },
     }
 }
 
 // getStaticPath()
 export async function getStaticPaths() {
-    const posts = getAllPosts(['category']);
+    const posts = getAllPosts(['lang']);
 
     return {
         paths: posts.map((post) => {
             return {
                 params: {
-                    category: post.category,
+                    lang: post.lang,
                 },
             };
         }),

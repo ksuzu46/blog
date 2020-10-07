@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import twemoji from "twemoji";
+import LanguageLabel from "./LanguageLabel";
 import DateFormatter from './DateFormatter';
 
-const MyLink = React.forwardRef(({onClick, href, emoji, title, date}, ref) => {
+const MyLink = React.forwardRef(({onClick, href, emoji, title, date, lang}, ref) => {
     return (
         <a href={href} onClick={onClick} ref={ref} className="post-card-link">
             <div className="post-card-emoji"
@@ -10,12 +11,13 @@ const MyLink = React.forwardRef(({onClick, href, emoji, title, date}, ref) => {
             <div className="post-card-content">
                 <h3>{title}</h3>
                 <DateFormatter dateString={date}/>
+                <LanguageLabel lang={lang} />
             </div>
         </a>
     )
 })
 
-export default function PostPreview({title, date, category, emoji, slug}) {
+export default function PostPreview({title, date, category, emoji, slug, lang}) {
     const parsedEmoji = twemoji.parse(emoji || "🐱", {
         folder: "svg",
         ext: ".svg"
@@ -27,7 +29,7 @@ export default function PostPreview({title, date, category, emoji, slug}) {
                 href={`/${encodeURIComponent(slug)}`}
                 passHref
             >
-                <MyLink emoji={parsedEmoji} title={title} date={date}/>
+                <MyLink emoji={parsedEmoji} title={title} date={date} lang={lang}/>
             </Link>
         </div>
     );

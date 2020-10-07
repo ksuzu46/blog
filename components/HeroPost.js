@@ -1,6 +1,6 @@
 import PostPreview from "./PostPreview";
 
-export default function HeroPost({title, category, emoji, date, slug}) {
+export default function HeroPost({title, category, emoji, date, slug, lang}) {
     return (
         <div className="hero-post">
             <h1>Most Recent</h1>
@@ -11,6 +11,7 @@ export default function HeroPost({title, category, emoji, date, slug}) {
                 category={category}
                 emoji={emoji}
                 slug={slug}
+                lang={lang}
             />
         </div>
     )

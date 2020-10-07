@@ -21,6 +21,7 @@ export default function Index({allPosts}) {
                                 slug={heroPost.slug}
                                 category={heroPost.category}
                                 emoji={heroPost.emoji}
+                                lang={heroPost.lang}
                             />
                         )}
                     {morePosts.length > 0 &&
@@ -40,7 +41,8 @@ export async function getStaticProps() {
         'slug',
         'category',
         'emoji',
-        'content'
+        'content',
+        'lang',
     ]);
 
     return {

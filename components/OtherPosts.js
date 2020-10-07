@@ -13,6 +13,7 @@ export default function OtherPosts({posts}) {
                         emoji={post.emoji}
                         date={post.slug}
                         slug={post.slug}
+                        lang={post.lang}
                     />
                 ))}
             </div>

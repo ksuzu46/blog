@@ -19,7 +19,5 @@
   .link {
     @extend .btn;
     font-weight: bolder;
-    color: $back-ground-list !important;
-    background-color: $nav-focus;
   }
 }

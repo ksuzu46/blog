@@ -10,12 +10,15 @@
   }
 }
 
+.blog-post-body-wrapper {
+  padding-top: 1rem;
+}
+
 .blog-post-heading-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  padding-bottom: 1rem;
   @include media-breakpoint-down(xs){
     flex-direction: column;
     padding-bottom: 0;

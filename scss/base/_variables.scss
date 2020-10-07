@@ -13,12 +13,9 @@ $blue-light: #39a0ca !default;
 $back-ground: #171927 !default;
 $focus: #689cc5 !default;
 $back-ground-list: #434d6d !default;
-$nav-focus: #e1b2c4;
-//$link-color: rgba(103, 154, 101, 0.97) !default;
+
 $link-color: #0074D9 !default;
-$base: #121212 !default;
 $section: #24283d !default;
-$background: #21242d !default; //#141c23
 $blackLight: #313746 !default;
 $gray: #727d86 !default;
 $silver: #969fa7 !default;
@@ -26,7 +23,6 @@ $whitesmoke: #f1f4f7 !default;
 $highlight: #20a8ea !default;
 $red: #f7615f　!default;
 $orange: #ffa22b !default;
-$gradient: linear-gradient(-45deg,#ffa649,#f7645b,#805ed4) !default;
 
 $bio-width: 290px;
 $max-width: 1100px;
@@ -86,7 +82,7 @@ $border-color: darken($primary, 20%);
 $box-shadow: darken($primary, 25%);
 $pre-bg:darken($back-ground, 5%);
 $code-bg: darken($back-ground, 1%);
-$code-color: darken($nav-focus, 10%);
+$code-color: darken(#e1b2c4, 10%);
 $bg-white: $back-ground;
 
 $block-quote-left-border: darken($primary, 10%);
