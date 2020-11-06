@@ -131,16 +131,6 @@
     }
   }
 
-  table {
-    border-spacing: 0;
-    border-collapse: collapse;
-  }
-
-  td,
-  th {
-    padding: 0;
-  }
-
   details summary {
     cursor: pointer;
   }
@@ -210,8 +200,7 @@
   ol,
   ul {
     padding-left: 0;
-    margin-top: 0;
-    margin-bottom: 0;
+    padding-bottom: 1em;
   }
 
   ol ol,
@@ -708,16 +697,16 @@
   ol ul,
   ul ol,
   ul ul {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
   }
 
   li {
     word-wrap: break-word;
   }
 
-  li > p {
-    margin-top: 16px;
+  li > p { 
+    margin-top: 1 em;
   }
 
   li + li {
@@ -743,28 +732,46 @@
 
   table {
     display: block;
+    font-size: 90%;
     width: 100%;
     overflow: auto;
+    border: none;
+    border: 1px solid darken($section, 5%);
+    border-radius: $border-radius;
+
+    td {
+      padding: 6px 13px;
+      border-left: 1px solid darken($section, 5%);
+      
+      &:first-child {
+        border-left: none;
+      }
+    }
+
+    th {
+      font-weight: 600;
+      text-align: center;
+      padding: 6px 13px;
+      border-left: 1px solid darken($section, 5%);
+      border-bottom: 1px solid darken($section, 5%);
+
+      &:first-child {
+        border-left: none;
+      }
+      
+    }
+
+    tr {
+      background-color: $section;
+    }
+
+    tr:nth-child(2n) {
+      background-color: lighten($section, 5%);
+      border-left: 1px $section;
+    }
   }
 
-  table th {
-    font-weight: 600;
-  }
-
-  table td,
-  table th {
-    padding: 6px 13px;
-    border: 1px solid #dfe2e5;
-  }
-
-  table tr {
-    background-color: #fff;
-    border-top: 1px solid #c6cbd1;
-  }
-
-  table tr:nth-child(2n) {
-    background-color: #f6f8fa;
-  }
+  
 
   img {
     max-width: 100%;
