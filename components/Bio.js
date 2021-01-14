@@ -9,7 +9,7 @@ const svgEmail = '/assets/images/email.svg';
 const svgGitHub = '/assets/images/github.svg'
 const svgResume = '/assets/images/resume.svg';
 const svgPortfolio = "/assets/images/portfolio.svg";
-const ghLink = "https://github.com/Ks5810";
+const ghLink = "https://github.com/ksuzu46";
 
 
 const Bio = () => {
