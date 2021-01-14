@@ -3,7 +3,7 @@ import Link from 'next/link';
 import {myEmail} from "../lib/constants";
 
 const author = "ksuzu";
-const bioText = "A junior software developer looking for a job"
+const bioText = "Junior Software Engineer"
 const avatarUrl = '/assets/images/gh_avator.png';
 const svgEmail = '/assets/images/email.svg';
 const svgGitHub = '/assets/images/github.svg'
