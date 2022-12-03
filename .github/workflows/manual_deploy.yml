@@ -26,6 +26,8 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRET_ACCESS_KEY }}
+          AWS_REGION_NAME: ap-northeast-3
+          AWS_S3_ENDPOINT: https://s3.amazonaws.com
         run: |
           echo "AWS s3 sync"
           aws s3 sync --region ap-northeast-3 ./out s3://${{ secrets.AWS_S3_BUCKET }} --delete
