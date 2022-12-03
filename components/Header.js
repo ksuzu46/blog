@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import ContentWrapper from "./ContentWrapper";
+import Link from 'next/link'
+import ContentWrapper from './ContentWrapper'
 
 export default function Header() {
     return (
@@ -12,5 +12,5 @@ export default function Header() {
                 </div>
             </ContentWrapper>
         </header>
-    );
+    )
 }

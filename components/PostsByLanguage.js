@@ -1,9 +1,9 @@
 import PostPreview from './PostPreview'
 
-export default function PostsByLanguage({posts, slug, lang}) {
+export default function PostsByLanguage({ posts }) {
     return (
         <div>
-            {posts.map((post) => (
+            {posts.map(post => (
                 <PostPreview
                     key={post.slug}
                     title={post.title}
@@ -15,5 +15,5 @@ export default function PostsByLanguage({posts, slug, lang}) {
                 />
             ))}
         </div>
-    );
+    )
 }

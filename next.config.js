@@ -1,26 +1,14 @@
-const withSass = require('@zeit/next-sass');
+const path = require('path')
 
-module.exports = withSass({
+module.exports = {
     webpack: function (config) {
-        config.module.rules.push(
-            {
-                test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
-                use: {
-                    loader: 'url-loader',
-                    options: {
-                        limit: 100000,
-                        name: '[name].[ext]'
-                    },
-                }
-            }, {
-                test: /\.md$/,
-                use: 'raw-loader',
-            },
-        )
-        config.node = {
-                fs: 'empty'
-        }
-
+        config.module.rules.push({
+            test: /\.md$/,
+            use: 'raw-loader',
+        })
         return config
-    }
-})
+    },
+    sassOptions: {
+        includePaths: [path.join(__dirname, 'scss')],
+    },
+}

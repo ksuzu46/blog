@@ -1,5 +1,5 @@
-import ContentWrapper from "./ContentWrapper";
-import {ghUrl, ghUsername} from "../lib/constants"
+import ContentWrapper from './ContentWrapper'
+import { ghUrl, ghUsername } from '../lib/constants'
 
 const Footer = () => {
     return (
@@ -11,7 +11,7 @@ const Footer = () => {
                 <div>© 2020 {ghUsername}</div>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default Footer;
+export default Footer

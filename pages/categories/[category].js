@@ -1,31 +1,30 @@
-import ContentWrapper from '../../components/ContentWrapper';
-import {getAllPosts, getPostsByCategory} from '../../lib/api';
-import Bio from "../../components/Bio";
-import PostsByCategory from "../../components/PostsByCategory";
-import CategoryMenu from "../../components/CategoryMenu";
+import ContentWrapper from '../../components/ContentWrapper'
+import { getAllPosts, getPostsByCategory } from '../../lib/api'
+import Bio from '../../components/Bio'
+import PostsByCategory from '../../components/PostsByCategory'
+import CategoryMenu from '../../components/CategoryMenu'
 
-
-export default function Category({postsByCategory, category}) {
+export default function Category({ postsByCategory, category }) {
     return (
         <ContentWrapper>
             <div className="content">
                 <div className="main-wrapper">
-                    <CategoryMenu/>
-                    {postsByCategory.length > 0 ?
-                        <PostsByCategory
-                            posts={postsByCategory}
-                            category={category}/> :
-                        <p>no posts for this category</p>}
+                    <CategoryMenu />
+                    {postsByCategory.length > 0 ? (
+                        <PostsByCategory posts={postsByCategory} category={category} />
+                    ) : (
+                        <p>no posts for this category</p>
+                    )}
                 </div>
-                <Bio/>
+                <Bio />
             </div>
         </ContentWrapper>
-    );
+    )
 }
 
 // getStaticProps() fetches data at build time
 // use getServerSideProps() when SSR is needed
-export async function getStaticProps({params}) {
+export async function getStaticProps({ params }) {
     const allPosts = getAllPosts([
         'title',
         'subtitle',
@@ -35,30 +34,27 @@ export async function getStaticProps({params}) {
         'emoji',
         'lang',
         'content'
-    ]);
-
-    const postsByCategory = getPostsByCategory(params.category, allPosts);
-
+    ])
+    const postsByCategory = getPostsByCategory(params.category, allPosts)
     return {
         props: {
             category: params.category,
             postsByCategory
-        },
+        }
     }
 }
 
 // getStaticPath()
 export async function getStaticPaths() {
-    const posts = getAllPosts(['category']);
-
+    const posts = getAllPosts(['category'])
     return {
-        paths: posts.map((post) => {
+        paths: posts.map(post => {
             return {
                 params: {
-                    category: post.category,
-                },
-            };
+                    category: post.category
+                }
+            }
         }),
-        fallback: false,
-    };
+        fallback: false
+    }
 }

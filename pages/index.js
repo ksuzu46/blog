@@ -1,36 +1,34 @@
-import OtherPosts from '../components/OtherPosts';
-import HeroPost from '../components/HeroPost';
-import Bio from '../components/Bio';
-import {getAllPosts} from '../lib/api';
-import ContentWrapper from "../components/ContentWrapper";
-import CategoryMenu from "../components/CategoryMenu";
+import OtherPosts from '../components/OtherPosts'
+import HeroPost from '../components/HeroPost'
+import Bio from '../components/Bio'
+import { getAllPosts } from '../lib/api'
+import ContentWrapper from '../components/ContentWrapper'
+import CategoryMenu from '../components/CategoryMenu'
 
-export default function Index({allPosts}) {
-    const heroPost = allPosts[0];
-    const morePosts = allPosts.slice(1);
+export default function Index({ allPosts }) {
+    const heroPost = allPosts[0]
+    const morePosts = allPosts.slice(1)
     return (
         <ContentWrapper>
             <div className="content">
                 <div className="main-wrapper">
-                    <CategoryMenu/>
-                    {
-                        heroPost && (
-                            <HeroPost
-                                title={heroPost.title}
-                                date={heroPost.slug}
-                                slug={heroPost.slug}
-                                category={heroPost.category}
-                                emoji={heroPost.emoji}
-                                lang={heroPost.lang}
-                            />
-                        )}
-                    {morePosts.length > 0 &&
-                    <OtherPosts posts={morePosts}/>}
+                    <CategoryMenu />
+                    {heroPost && (
+                        <HeroPost
+                            title={heroPost.title}
+                            date={heroPost.slug}
+                            slug={heroPost.slug}
+                            category={heroPost.category}
+                            emoji={heroPost.emoji}
+                            lang={heroPost.lang}
+                        />
+                    )}
+                    {morePosts.length > 0 && <OtherPosts posts={morePosts} />}
                 </div>
-                <Bio/>
+                <Bio />
             </div>
         </ContentWrapper>
-    );
+    )
 }
 
 export async function getStaticProps() {
@@ -42,10 +40,10 @@ export async function getStaticProps() {
         'category',
         'emoji',
         'content',
-        'lang',
-    ]);
+        'lang'
+    ])
 
     return {
-        props: {allPosts},
-    };
+        props: { allPosts }
+    }
 }

@@ -1,9 +1,9 @@
 import PostPreview from './PostPreview'
 
-export default function PostsByCategory({posts, category}) {
+export default function PostsByCategory({ posts, category }) {
     return (
         <div>
-            {posts.map((post) => (
+            {posts.map(post => (
                 <PostPreview
                     key={post.slug}
                     title={post.title}
@@ -15,5 +15,5 @@ export default function PostsByCategory({posts, category}) {
                 />
             ))}
         </div>
-    );
+    )
 }
