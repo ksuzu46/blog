@@ -56,3 +56,12 @@ export function getPostsByLanguage(
 ): Partial<Post>[] {
   return posts.filter((post) => post.lang === lang)
 }
+
+export function getAdjacentPosts(slug: string): { prev: Partial<Post> | null; next: Partial<Post> | null } {
+  const posts = getAllPosts(['title', 'slug', 'emoji'])
+  const index = posts.findIndex((p) => p.slug === slug)
+  return {
+    prev: index < posts.length - 1 ? posts[index + 1] : null,
+    next: index > 0 ? posts[index - 1] : null,
+  }
+}

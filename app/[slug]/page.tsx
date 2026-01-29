@@ -3,10 +3,13 @@ import { notFound } from 'next/navigation'
 import PostBody from '@/components/PostBody'
 import PostHeader from '@/components/PostHeader'
 import ContentWrapper from '@/components/ContentWrapper'
-import { getAllPosts, getPostBySlug } from '@/lib/api'
+import { getAllPosts, getPostBySlug, getAdjacentPosts } from '@/lib/api'
 import markdownToHtml from '@/lib/markdownToHtml'
+import { getReadingTime } from '@/lib/readingTime'
 import Bio from '@/components/Bio'
 import CategoryMenu from '@/components/CategoryMenu'
+import TableOfContents from '@/components/TableOfContents'
+import PostNavigation from '@/components/PostNavigation'
 import { siteUrl, ghUsername } from '@/lib/constants'
 
 export function generateStaticParams() {
@@ -49,6 +52,8 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
   }
 
   const content = await markdownToHtml(post.content || '')
+  const readingTime = getReadingTime(content)
+  const { prev, next } = getAdjacentPosts(slug)
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -77,8 +82,11 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
               title={post.title!}
               date={post.date!}
               lang={post.lang!}
+              readingTime={readingTime}
             />
+            <TableOfContents />
             <PostBody content={content} />
+            <PostNavigation prev={prev} next={next} />
           </div>
         </div>
         <Bio />

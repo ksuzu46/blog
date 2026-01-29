@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ThemeToggle from '@/components/ThemeToggle'
+import ScrollToTop from '@/components/ScrollToTop'
 import { siteUrl, siteTitle, siteDescription, ghUsername } from '@/lib/constants'
 import '@/scss/styles.global.scss'
 
@@ -61,6 +62,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         {children}
         <Footer />
+        <ScrollToTop />
         <ThemeToggle />
       </body>
     </html>
