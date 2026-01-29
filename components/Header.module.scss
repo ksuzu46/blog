@@ -19,7 +19,7 @@
   a,
   h1 {
     color: var(--color-text);
-    width: 100%;
+    flex: 1;
 
     &:hover {
       color: var(--color-text-dim);

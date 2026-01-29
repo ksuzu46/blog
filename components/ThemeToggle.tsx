@@ -7,13 +7,18 @@ export default function ThemeToggle() {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark')
 
   useEffect(() => {
-    const stored = localStorage.getItem('theme')
-    if (stored === 'light' || stored === 'dark') {
-      setTheme(stored)
-      document.documentElement.setAttribute('data-theme', stored)
-    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-      setTheme('light')
-      document.documentElement.setAttribute('data-theme', 'light')
+    const current = document.documentElement.getAttribute('data-theme')
+    if (current === 'light' || current === 'dark') {
+      setTheme(current)
+    } else {
+      const stored = localStorage.getItem('theme')
+      if (stored === 'light' || stored === 'dark') {
+        setTheme(stored)
+        document.documentElement.setAttribute('data-theme', stored)
+      } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+        setTheme('light')
+        document.documentElement.setAttribute('data-theme', 'light')
+      }
     }
   }, [])
 

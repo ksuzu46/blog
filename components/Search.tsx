@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import Fuse from 'fuse.js'
 import Link from 'next/link'
 import styles from './Search.module.scss'
@@ -17,29 +17,38 @@ export default function Search() {
   const [open, setOpen] = useState(false)
   const [query, setQuery] = useState('')
   const [results, setResults] = useState<SearchItem[]>([])
-  const [index, setIndex] = useState<Fuse<SearchItem> | null>(null)
+  const indexRef = useRef<Fuse<SearchItem> | null>(null)
+  const [indexReady, setIndexReady] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
 
-  useEffect(() => {
-    if (!open) return
+  const loadIndex = useCallback(() => {
+    if (indexRef.current) {
+      setIndexReady(true)
+      return
+    }
     fetch('/search-index.json')
       .then((r) => r.json())
       .then((data: SearchItem[]) => {
-        setIndex(new Fuse(data, { keys: ['title', 'excerpt', 'category'], threshold: 0.3 }))
+        indexRef.current = new Fuse(data, { keys: ['title', 'excerpt', 'category'], threshold: 0.3 })
+        setIndexReady(true)
       })
-  }, [open])
+  }, [])
+
+  useEffect(() => {
+    if (open) loadIndex()
+  }, [open, loadIndex])
 
   useEffect(() => {
     if (open && inputRef.current) inputRef.current.focus()
   }, [open])
 
   useEffect(() => {
-    if (!index || !query.trim()) {
+    if (!indexRef.current || !query.trim()) {
       setResults([])
       return
     }
-    setResults(index.search(query).map((r) => r.item).slice(0, 8))
-  }, [query, index])
+    setResults(indexRef.current.search(query).map((r) => r.item).slice(0, 8))
+  }, [query, indexReady])
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -84,7 +93,7 @@ export default function Search() {
                 ))}
               </ul>
             )}
-            {query && results.length === 0 && index && (
+            {query && results.length === 0 && indexRef.current && (
               <p className={styles.empty}>No results found</p>
             )}
           </div>

@@ -15,7 +15,7 @@ export default function PostHeader({ title, date, lang, readingTime }: PostHeade
         <h3 className="blog-post-heading">{title}</h3>
         <h6 className="blog-post-heading-date">
           <DateFormatter dateString={date} />
-          {readingTime && <span style={{ marginLeft: '0.75em', opacity: 0.7 }}>· {readingTime}</span>}
+          {readingTime && <span className="blog-post-reading-time">· {readingTime}</span>}
         </h6>
       </div>
       <LanguageLabel lang={lang} />

@@ -14,10 +14,12 @@ export default function ScrollToTop() {
 
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' })
 
-  if (!visible) return null
-
   return (
-    <button className={styles.button} onClick={scrollToTop} aria-label="Scroll to top">
+    <button
+      className={`${styles.button} ${visible ? styles.visible : ''}`}
+      onClick={scrollToTop}
+      aria-label="Scroll to top"
+    >
       ↑
     </button>
   )

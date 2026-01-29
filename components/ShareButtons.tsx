@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import styles from './ShareButtons.module.scss'
 
 interface ShareButtonsProps {
@@ -8,14 +9,17 @@ interface ShareButtonsProps {
 }
 
 export default function ShareButtons({ url, title }: ShareButtonsProps) {
+  const [copied, setCopied] = useState(false)
   const encodedUrl = encodeURIComponent(url)
   const encodedTitle = encodeURIComponent(title)
 
   const copyLink = async () => {
     try {
       await navigator.clipboard.writeText(url)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
     } catch {
-      // fallback
+      // Clipboard API unavailable
     }
   }
 
@@ -41,7 +45,7 @@ export default function ShareButtons({ url, title }: ShareButtonsProps) {
         B!
       </a>
       <button onClick={copyLink} className={styles.button} aria-label="Copy link">
-        🔗
+        {copied ? '✓' : '🔗'}
       </button>
     </div>
   )

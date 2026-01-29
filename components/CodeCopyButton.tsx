@@ -15,8 +15,12 @@ export default function CodeCopyButton() {
       btn.className = styles.button
       btn.textContent = 'Copy'
       btn.addEventListener('click', async () => {
-        await navigator.clipboard.writeText(block.textContent || '')
-        btn.textContent = 'Copied!'
+        try {
+          await navigator.clipboard.writeText(block.textContent || '')
+          btn.textContent = 'Copied!'
+        } catch {
+          btn.textContent = 'Failed'
+        }
         setTimeout(() => {
           btn.textContent = 'Copy'
         }, 2000)
