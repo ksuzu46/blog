@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { myEmail } from '@/lib/constants'
 import styles from './Bio.module.scss'
@@ -14,7 +15,7 @@ export default function Bio() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
-        <img className={styles.avatarImage} src={avatarUrl} alt={author} />
+        <Image className={styles.avatarImage} src={avatarUrl} alt={author} width={80} height={80} />
         <div className={styles.name}>
           <Link href="/">{author}</Link>
         </div>
@@ -24,19 +25,19 @@ export default function Bio() {
         <div className={styles.links}>
           <div className={styles.link}>
             <a href="https://ksuzu.net">
-              <img src={svgPortfolio} alt="PORTFOLIO" />
+              <Image src={svgPortfolio} alt="PORTFOLIO" width={16} height={16} />
               Website
             </a>
           </div>
           <div className={styles.link}>
             <a href={ghLink}>
-              <img src={svgGitHub} alt="GitHub" />
+              <Image src={svgGitHub} alt="GitHub" width={16} height={16} />
               GitHub
             </a>
           </div>
           <div className={styles.link}>
             <a className={styles.linkEmail} href={`mailto:${myEmail}`}>
-              <img src={svgEmail} alt="Email" />
+              <Image src={svgEmail} alt="Email" width={16} height={16} />
               E-mail
             </a>
           </div>

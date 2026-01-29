@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 interface AvatarProps {
   name: string
   picture: string
@@ -6,7 +8,7 @@ interface AvatarProps {
 export default function Avatar({ name, picture }: AvatarProps) {
   return (
     <div className="avatar-image">
-      <img src={picture} alt={name} />
+      <Image src={picture} alt={name} width={48} height={48} />
     </div>
   )
 }

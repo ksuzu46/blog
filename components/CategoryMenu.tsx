@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import styles from './CategoryMenu.module.scss'
@@ -21,7 +22,7 @@ function CategoryLink({ catName, catIcon, catLink, path }: CategoryLinkProps) {
     <div className={`${styles.item} ${catLink === path ? styles.active : ''}`}>
       <Link href={catLink} className={styles.link}>
         <div className={styles.image}>
-          <img src={catIcon} alt={catName} />
+          <Image src={catIcon} alt={catName} width={24} height={24} />
         </div>
         <div className={styles.catName}>{catName}</div>
       </Link>
