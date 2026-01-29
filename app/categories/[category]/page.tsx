@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import ContentWrapper from '@/components/ContentWrapper'
 import { getAllPosts, getPostsByCategory } from '@/lib/api'
 import Bio from '@/components/Bio'
@@ -8,6 +9,14 @@ export function generateStaticParams() {
   const posts = getAllPosts(['category'])
   const categories = [...new Set(posts.map((post) => post.category!))]
   return categories.map((category) => ({ category }))
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ category: string }> }): Promise<Metadata> {
+  const { category } = await params
+  return {
+    title: `${category} posts`,
+    description: `Blog posts in the ${category} category`,
+  }
 }
 
 export default async function CategoryPage({ params }: { params: Promise<{ category: string }> }) {

@@ -10,6 +10,7 @@
     "@twemoji/api": "^17.0.2",
     "bootstrap": "^5.2.3",
     "date-fns": "^4.1.0",
+    "feed": "^5.2.0",
     "gray-matter": "^4.0.3",
     "html-react-parser": "^5.2.0",
     "next": "15.5.11",

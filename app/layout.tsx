@@ -1,11 +1,35 @@
 import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import { siteUrl, siteTitle, siteDescription, ghUsername } from '@/lib/constants'
 import '@/scss/styles.global.scss'
 
 export const metadata: Metadata = {
-  title: 'blog',
-  description: 'my blog powered by next js',
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: siteTitle,
+    template: `%s | ${siteTitle}`,
+  },
+  description: siteDescription,
+  authors: [{ name: ghUsername, url: siteUrl }],
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: siteUrl,
+    siteName: siteTitle,
+    title: siteTitle,
+    description: siteDescription,
+  },
+  twitter: {
+    card: 'summary',
+    title: siteTitle,
+    description: siteDescription,
+  },
+  alternates: {
+    types: {
+      'application/rss+xml': '/feed.xml',
+    },
+  },
   icons: {
     icon: [
       { url: '/favicon/favicon.png', type: 'image/png' },
@@ -26,7 +50,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <meta name="theme-color" content="#000" />
         <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000" />
-        <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       </head>
       <body>
         <Header />
