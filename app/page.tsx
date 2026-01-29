@@ -14,6 +14,7 @@ export default function Index() {
     'emoji',
     'lang',
     'excerpt',
+    'readingTime',
   ])
 
   const heroPost = allPosts[0]
@@ -34,6 +35,7 @@ export default function Index() {
                 slug={heroPost.slug!}
                 lang={heroPost.lang!}
                 excerpt={heroPost.excerpt}
+                readingTime={heroPost.readingTime}
               />
             </div>
           )}

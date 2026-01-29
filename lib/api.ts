@@ -37,6 +37,12 @@ export function getPostBySlug(
     items.excerpt = plain.slice(0, 160) + (plain.length > 160 ? '...' : '')
   }
 
+  if (fields.includes('readingTime')) {
+    const plain = content.replace(/[#*`>\[\]()-]/g, '').replace(/\s+/g, '')
+    const minutes = Math.max(1, Math.round(plain.length / 600))
+    items.readingTime = `${minutes} min`
+  }
+
   return items
 }
 

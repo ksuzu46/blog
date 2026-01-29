@@ -20,6 +20,7 @@ export default function PostList({ posts, heading }: PostListProps) {
             slug={post.slug!}
             lang={post.lang!}
             excerpt={post.excerpt}
+            readingTime={post.readingTime}
           />
         ))}
       </div>

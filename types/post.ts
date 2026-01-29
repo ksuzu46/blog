@@ -7,4 +7,5 @@ export interface Post {
   lang: string
   content: string
   excerpt: string
+  readingTime: string
 }

@@ -79,6 +79,24 @@
   }
 }
 
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 0;
+
+  time {
+    display: inline;
+    margin-bottom: 0;
+  }
+}
+
+.readingTime {
+  margin-left: 0.5em;
+  font-size: 0.9em;
+  color: var(--color-gray);
+  opacity: 0.8;
+}
+
 .excerpt {
   margin: 0.3em 0;
   font-size: 0.85em;
