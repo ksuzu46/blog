@@ -10,9 +10,11 @@ interface PostPreviewProps {
   emoji: string
   slug: string
   lang: string
+  excerpt?: string
+  readingTime?: string
 }
 
-export default function PostPreview({ title, date, emoji, slug, lang }: PostPreviewProps) {
+export default function PostPreview({ title, date, emoji, slug, lang, excerpt, readingTime }: PostPreviewProps) {
   const parsedEmoji = twemoji.parse(emoji || '🐱', {
     folder: 'svg',
     ext: '.svg',
@@ -24,7 +26,11 @@ export default function PostPreview({ title, date, emoji, slug, lang }: PostPrev
         <div className={styles.emoji} dangerouslySetInnerHTML={{ __html: parsedEmoji }} />
         <div className={styles.content}>
           <h3>{title}</h3>
-          <DateFormatter dateString={date} />
+          {excerpt && <p className={styles.excerpt}>{excerpt}</p>}
+          <span className={styles.meta}>
+            <DateFormatter dateString={date} />
+            {readingTime && <span className={styles.readingTime}>· {readingTime}</span>}
+          </span>
           <LanguageLabel lang={lang} />
         </div>
       </Link>

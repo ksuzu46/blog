@@ -19,6 +19,8 @@ export default function PostList({ posts, heading }: PostListProps) {
             date={post.date!}
             slug={post.slug!}
             lang={post.lang!}
+            excerpt={post.excerpt}
+            readingTime={post.readingTime}
           />
         ))}
       </div>

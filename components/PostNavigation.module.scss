@@ -1,0 +1,41 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-section);
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  max-width: 48%;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background: var(--color-section);
+    text-decoration: none;
+  }
+}
+
+.next {
+  text-align: right;
+  margin-left: auto;
+}
+
+.label {
+  font-size: 0.8rem;
+  color: var(--color-gray);
+  margin-bottom: 0.25rem;
+}
+
+.title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.3;
+}

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import ContentWrapper from './ContentWrapper'
+import Search from './Search'
 import styles from './Header.module.scss'
 
 export default function Header() {
@@ -10,6 +11,7 @@ export default function Header() {
           <h1>
             <Link href="/">{`ksuzu's blog`}</Link>
           </h1>
+          <Search />
         </div>
       </ContentWrapper>
     </header>

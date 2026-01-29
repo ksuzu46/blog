@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import ContentWrapper from '@/components/ContentWrapper'
 import { getAllPosts, getPostsByLanguage } from '@/lib/api'
 import Bio from '@/components/Bio'
@@ -10,6 +11,14 @@ export function generateStaticParams() {
   return langs.map((lang) => ({ lang }))
 }
 
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params
+  return {
+    title: `${lang} posts`,
+    description: `Blog posts written in ${lang}`,
+  }
+}
+
 export default async function LanguagePage({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = await params
   const allPosts = getAllPosts([
@@ -19,6 +28,8 @@ export default async function LanguagePage({ params }: { params: Promise<{ lang:
     'category',
     'emoji',
     'lang',
+    'excerpt',
+    'readingTime',
   ])
   const postsByLanguage = getPostsByLanguage(lang, allPosts)
 

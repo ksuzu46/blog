@@ -524,6 +524,13 @@ extend@^3.0.0:
   resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.2.tgz#f8b1136b4071fbd8eb140aff858b1019ec2915fa"
   integrity sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==
 
+feed@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/feed/-/feed-5.2.0.tgz#f5cf2cb7395f64614017557764bdf49fe1a3d69a"
+  integrity sha512-hgH6CCb+7+0c8PBlakI2KubG6R+Rb1MhpNcdvqUXZTBwBHf32piwY255diAkAmkGZ6AWlywOU88AkOgP9q8Rdw==
+  dependencies:
+    xml-js "^1.6.11"
+
 fs-extra@^8.0.1:
   version "8.1.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-8.1.0.tgz#49d43c45a88cd9677668cb7be1b46efdb8d2e1c0"
@@ -532,6 +539,16 @@ fs-extra@^8.0.1:
     graceful-fs "^4.2.0"
     jsonfile "^4.0.0"
     universalify "^0.1.0"
+
+fuse.js@^7.1.0:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/fuse.js/-/fuse.js-7.1.0.tgz#306228b4befeee11e05b027087c2744158527d09"
+  integrity sha512-trLf4SzuuUxfusZADLINj+dE8clK1frKdmqiJNb1Es75fmI5oY6X2mxLVUciLLjxqw/xr72Dhy+lER6dGd02FQ==
+
+github-slugger@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/github-slugger/-/github-slugger-2.0.0.tgz#52cf2f9279a21eb6c59dd385b410f0c0adda8f1a"
+  integrity sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==
 
 graceful-fs@^4.1.6, graceful-fs@^4.2.0:
   version "4.2.11"
@@ -547,6 +564,13 @@ gray-matter@^4.0.3:
     kind-of "^6.0.2"
     section-matter "^1.0.0"
     strip-bom-string "^1.0.0"
+
+hast-util-heading-rank@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/hast-util-heading-rank/-/hast-util-heading-rank-3.0.0.tgz#2d5c6f2807a7af5c45f74e623498dd6054d2aba8"
+  integrity sha512-EJKb8oMUXVHcWZTDepnr+WNbfnXKFNf9duMesmr4S8SXTJBJ9M4Yok08pu9vxdJwdlGRhVumk9mEhkEvKGifwA==
+  dependencies:
+    "@types/hast" "^3.0.0"
 
 hast-util-is-element@^3.0.0:
   version "3.0.0"
@@ -571,6 +595,13 @@ hast-util-to-html@^9.0.0:
     space-separated-tokens "^2.0.0"
     stringify-entities "^4.0.0"
     zwitch "^2.0.4"
+
+hast-util-to-string@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/hast-util-to-string/-/hast-util-to-string-3.0.1.tgz#a4f15e682849326dd211c97129c94b0c3e76527c"
+  integrity sha512-XelQVTDWvqcl3axRfI0xSeoVKzyIFPwsAGSLIsKdJKQMXDYJS4WYrBNF/8J7RdhIcFI2BOHgAifggsvsxp/3+A==
+  dependencies:
+    "@types/hast" "^3.0.0"
 
 hast-util-to-text@^4.0.0:
   version "4.0.2"
@@ -1211,6 +1242,17 @@ rehype-highlight@^7.0.2:
     unist-util-visit "^5.0.0"
     vfile "^6.0.0"
 
+rehype-slug@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/rehype-slug/-/rehype-slug-6.0.0.tgz#1d21cf7fc8a83ef874d873c15e6adaee6344eaf1"
+  integrity sha512-lWyvf/jwu+oS5+hL5eClVd3hNdmwM1kAC0BUvEGD19pajQMIzcNUd/k9GsfQ+FfECvX+JE+e9/btsKH0EjJT6A==
+  dependencies:
+    "@types/hast" "^3.0.0"
+    github-slugger "^2.0.0"
+    hast-util-heading-rank "^3.0.0"
+    hast-util-to-string "^3.0.0"
+    unist-util-visit "^5.0.0"
+
 rehype-stringify@^10.0.1:
   version "10.0.1"
   resolved "https://registry.yarnpkg.com/rehype-stringify/-/rehype-stringify-10.0.1.tgz#2ec1ebc56c6aba07905d3b4470bdf0f684f30b75"
@@ -1272,6 +1314,11 @@ sass@^1.97.0:
     source-map-js ">=0.6.2 <2.0.0"
   optionalDependencies:
     "@parcel/watcher" "^2.4.1"
+
+sax@^1.2.4:
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/sax/-/sax-1.4.4.tgz#f29c2bba80ce5b86f4343b4c2be9f2b96627cf8b"
+  integrity sha512-1n3r/tGXO6b6VXMdFT54SHzT9ytu9yr7TaELowdYpMqY/Ao7EnlQGmAQ1+RatX7Tkkdm6hONI2owqNx2aZj5Sw==
 
 scheduler@^0.27.0:
   version "0.27.0"
@@ -1478,6 +1525,13 @@ vfile@^6.0.0:
   dependencies:
     "@types/unist" "^3.0.0"
     vfile-message "^4.0.0"
+
+xml-js@^1.6.11:
+  version "1.6.11"
+  resolved "https://registry.yarnpkg.com/xml-js/-/xml-js-1.6.11.tgz#927d2f6947f7f1c19a316dd8eea3614e8b18f8e9"
+  integrity sha512-7rVi2KMfwfWFl+GpPg6m80IVMWXLRjO+PxTq7V2CDhoGak0wzYzFgUY2m4XJ47OGdXd8eLE8EmwfAmdjw7lC1g==
+  dependencies:
+    sax "^1.2.4"
 
 zwitch@^2.0.0, zwitch@^2.0.4:
   version "2.0.4"

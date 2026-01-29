@@ -32,6 +32,17 @@ export function getPostBySlug(
     }
   })
 
+  if (fields.includes('excerpt') && !items.excerpt) {
+    const plain = content.replace(/[#*`>\[\]()-]/g, '').replace(/\s+/g, ' ').trim()
+    items.excerpt = plain.slice(0, 160) + (plain.length > 160 ? '...' : '')
+  }
+
+  if (fields.includes('readingTime')) {
+    const plain = content.replace(/[#*`>\[\]()-]/g, '').replace(/\s+/g, '')
+    const minutes = Math.max(1, Math.round(plain.length / 600))
+    items.readingTime = `${minutes} min`
+  }
+
   return items
 }
 
@@ -55,4 +66,13 @@ export function getPostsByLanguage(
   posts: Partial<Post>[]
 ): Partial<Post>[] {
   return posts.filter((post) => post.lang === lang)
+}
+
+export function getAdjacentPosts(slug: string): { prev: Partial<Post> | null; next: Partial<Post> | null } {
+  const posts = getAllPosts(['title', 'slug', 'emoji'])
+  const index = posts.findIndex((p) => p.slug === slug)
+  return {
+    prev: index < posts.length - 1 ? posts[index + 1] : null,
+    next: index > 0 ? posts[index - 1] : null,
+  }
 }
