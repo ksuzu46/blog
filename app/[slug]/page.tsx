@@ -38,7 +38,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           <div className="blog">
             <PostHeader
               title={post.title!}
-              date={post.slug!}
+              date={post.date!}
               lang={post.lang!}
             />
             <PostBody content={content} />

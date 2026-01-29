@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { myEmail } from '@/lib/constants'
+import { ghUrl, myEmail } from '@/lib/constants'
 import styles from './Bio.module.scss'
 
 const author = 'ksuzu'
@@ -9,7 +9,6 @@ const avatarUrl = '/images/gh_avator.png'
 const svgEmail = '/images/email.svg'
 const svgGitHub = '/images/github.svg'
 const svgPortfolio = '/images/portfolio.svg'
-const ghLink = 'https://github.com/ksuzu46'
 
 export default function Bio() {
   return (
@@ -30,7 +29,7 @@ export default function Bio() {
             </a>
           </div>
           <div className={styles.link}>
-            <a href={ghLink}>
+            <a href={ghUrl}>
               <Image src={svgGitHub} alt="GitHub" width={16} height={16} />
               GitHub
             </a>

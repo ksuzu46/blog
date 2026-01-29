@@ -1,7 +1,7 @@
 import ContentWrapper from '@/components/ContentWrapper'
 import { getAllPosts, getPostsByCategory } from '@/lib/api'
 import Bio from '@/components/Bio'
-import PostsByCategory from '@/components/PostsByCategory'
+import PostList from '@/components/PostList'
 import CategoryMenu from '@/components/CategoryMenu'
 
 export function generateStaticParams() {
@@ -14,13 +14,11 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
   const { category } = await params
   const allPosts = getAllPosts([
     'title',
-    'subtitle',
     'date',
     'slug',
     'category',
     'emoji',
     'lang',
-    'content',
   ])
   const postsByCategory = getPostsByCategory(category, allPosts)
 
@@ -30,7 +28,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
         <div className="main-wrapper">
           <CategoryMenu />
           {postsByCategory.length > 0 ? (
-            <PostsByCategory posts={postsByCategory} category={category} />
+            <PostList posts={postsByCategory} />
           ) : (
             <p>no posts for this category</p>
           )}

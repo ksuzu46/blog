@@ -1,5 +1,5 @@
-import OtherPosts from '@/components/OtherPosts'
-import HeroPost from '@/components/HeroPost'
+import PostPreview from '@/components/PostPreview'
+import PostList from '@/components/PostList'
 import Bio from '@/components/Bio'
 import { getAllPosts } from '@/lib/api'
 import ContentWrapper from '@/components/ContentWrapper'
@@ -8,12 +8,10 @@ import CategoryMenu from '@/components/CategoryMenu'
 export default function Index() {
   const allPosts = getAllPosts([
     'title',
-    'subtitle',
     'date',
     'slug',
     'category',
     'emoji',
-    'content',
     'lang',
   ])
 
@@ -26,15 +24,18 @@ export default function Index() {
         <div className="main-wrapper">
           <CategoryMenu />
           {heroPost && (
-            <HeroPost
-              title={heroPost.title!}
-              slug={heroPost.slug!}
-              category={heroPost.category!}
-              emoji={heroPost.emoji!}
-              lang={heroPost.lang!}
-            />
+            <div className="hero-post">
+              <h1>Most Recent</h1>
+              <PostPreview
+                title={heroPost.title!}
+                emoji={heroPost.emoji!}
+                date={heroPost.date!}
+                slug={heroPost.slug!}
+                lang={heroPost.lang!}
+              />
+            </div>
           )}
-          {morePosts.length > 0 && <OtherPosts posts={morePosts} />}
+          {morePosts.length > 0 && <PostList posts={morePosts} heading="Other Posts" />}
         </div>
         <Bio />
       </div>

@@ -1,7 +1,7 @@
 import ContentWrapper from '@/components/ContentWrapper'
 import { getAllPosts, getPostsByLanguage } from '@/lib/api'
 import Bio from '@/components/Bio'
-import PostsByLanguage from '@/components/PostsByLanguage'
+import PostList from '@/components/PostList'
 import CategoryMenu from '@/components/CategoryMenu'
 
 export function generateStaticParams() {
@@ -14,13 +14,11 @@ export default async function LanguagePage({ params }: { params: Promise<{ lang:
   const { lang } = await params
   const allPosts = getAllPosts([
     'title',
-    'subtitle',
     'date',
     'slug',
     'category',
     'emoji',
     'lang',
-    'content',
   ])
   const postsByLanguage = getPostsByLanguage(lang, allPosts)
 
@@ -30,7 +28,7 @@ export default async function LanguagePage({ params }: { params: Promise<{ lang:
         <div className="main-wrapper">
           <CategoryMenu />
           {postsByLanguage.length > 0 ? (
-            <PostsByLanguage posts={postsByLanguage} />
+            <PostList posts={postsByLanguage} />
           ) : (
             <p>no posts for this language</p>
           )}

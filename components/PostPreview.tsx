@@ -7,7 +7,6 @@ import styles from './PostPreview.module.scss'
 interface PostPreviewProps {
   title: string
   date: string
-  category: string
   emoji: string
   slug: string
   lang: string

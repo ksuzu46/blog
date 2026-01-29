@@ -20,10 +20,8 @@ export function getPostBySlug(
   const items: Partial<Post> = {}
 
   fields.forEach((field) => {
-    if (field === 'slug') {
-      items[field] = realSlug
-    }
-    if (field === 'date') {
+    if (field === 'slug' || field === 'date') {
+      // slug doubles as date (filenames are ISO dates like 2020-02-02)
       items[field] = realSlug
     }
     if (field === 'content') {
