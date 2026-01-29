@@ -3,9 +3,10 @@
 .header {
   width: 100%;
   padding: 1.5rem 0;
-  background-color: $back-ground;
-  border-bottom: solid 1px $section;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  background-color: var(--color-bg);
+  border-bottom: solid 1px var(--color-section);
+  box-shadow: 0 2px 4px var(--color-header-shadow);
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
 .inner {
@@ -14,17 +15,17 @@
 
   a,
   h1 {
-    color: $primary;
+    color: var(--color-text);
     width: 100%;
 
     &:hover {
-      color: darken($primary, 10%);
+      color: var(--color-text-dim);
       text-decoration: none;
     }
 
     &:active,
     &:focus {
-      color: darken($primary, 10%);
+      color: var(--color-text-dim);
       outline: none;
       box-shadow: none;
     }

@@ -6,9 +6,10 @@
   width: $bio-width;
   padding: 2em;
   font-size: 15.5px;
-  background: $section;
+  background: var(--color-section);
   border-radius: 4px;
-  box-shadow: 0 2px 4px darken($section, 10%);
+  box-shadow: 0 2px 4px var(--color-section-dark);
+  transition: background-color 0.3s;
 
   @include media-breakpoint-down(md) {
     position: relative;
@@ -37,20 +38,20 @@
   margin-left: 20px;
 
   a {
-    color: $primary;
+    color: var(--color-text);
     width: 100%;
     font-weight: 600;
     letter-spacing: 1px;
     font-size: 1.3em;
 
     &:hover {
-      color: darken($primary, 10%);
+      color: var(--color-text-dim);
       text-decoration: none;
     }
 
     &:active,
     &:focus {
-      color: darken($primary, 10%);
+      color: var(--color-text-dim);
       outline: none;
       box-shadow: none;
     }
@@ -62,7 +63,7 @@
 }
 
 .text {
-  color: lighten($primary, 5%);
+  color: var(--color-text);
   font-size: 0.92em;
 }
 
@@ -90,17 +91,17 @@
   letter-spacing: 0.5px;
 
   a {
-    color: $primary;
+    color: var(--color-text);
     letter-spacing: 1px;
 
     &:hover {
-      color: darken($primary, 10%);
+      color: var(--color-text-dim);
       text-decoration: none;
     }
 
     &:active,
     &:focus {
-      color: $gray;
+      color: var(--color-gray);
       outline: none;
       box-shadow: none;
     }

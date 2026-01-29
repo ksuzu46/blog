@@ -8,12 +8,13 @@
   margin-top: 3em;
   text-align: center;
   padding: 1.5em;
-  border-top: solid 1px $section;
-  color: $primary;
+  border-top: solid 1px var(--color-section);
+  color: var(--color-text);
   font-size: 14px;
+  transition: border-color 0.3s, color 0.3s;
 
   a {
-    color: $primary;
+    color: var(--color-text);
     text-decoration: underline;
   }
 }

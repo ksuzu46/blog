@@ -5,11 +5,12 @@
     display: flex;
     align-items: start;
     padding: 1.4em 0;
-    color: $primary;
-    border-top: solid 1px $section;
+    color: var(--color-text);
+    border-top: solid 1px var(--color-section);
+    transition: background-color 0.2s;
 
     &:hover {
-      background: $section;
+      background: var(--color-section);
       text-decoration: none;
     }
 
@@ -26,7 +27,7 @@
   margin: 0;
   width: 90px;
   height: 90px;
-  background: $section;
+  background: var(--color-section);
   border-radius: 4px;
   font-size: 50px;
 
@@ -61,7 +62,7 @@
     margin-bottom: 0.2em;
     letter-spacing: 0.05em;
     font-size: 0.9em;
-    color: $gray;
+    color: var(--color-gray);
   }
 
   @include media-breakpoint-down(sm) {

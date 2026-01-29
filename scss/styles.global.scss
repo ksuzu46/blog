@@ -7,8 +7,45 @@
 @import "base/variables";
 @import "bootstrap/scss/bootstrap";
 
+:root {
+  --color-bg: #{$back-ground};
+  --color-text: #{$primary};
+  --color-section: #{$section};
+  --color-link: #{$link-color};
+  --color-gray: #{$gray};
+  --color-code-bg: #{$code-bg};
+  --color-pre-bg: #{$pre-bg};
+  --color-code-color: #{$code-color};
+  --color-border: #{$border-color};
+  --color-header-shadow: rgba(0, 0, 0, 0.4);
+  --color-section-light: #{lighten($section, 10%)};
+  --color-section-dark: #{darken($section, 10%)};
+  --color-text-dim: #{darken($primary, 10%)};
+}
+
+[data-theme="light"] {
+  --color-bg: #f8f9fa;
+  --color-text: #3c4043;
+  --color-section: #e8eaed;
+  --color-link: #1a73e8;
+  --color-gray: #5f6368;
+  --color-code-bg: #f1f3f4;
+  --color-pre-bg: #f1f3f4;
+  --color-code-color: #c7254e;
+  --color-border: #dadce0;
+  --color-header-shadow: rgba(0, 0, 0, 0.1);
+  --color-section-light: #f1f3f4;
+  --color-section-dark: #dadce0;
+  --color-text-dim: #5f6368;
+}
+
 @import "base/page";
 @import "components/github-markdown";
 @import "~highlight.js/styles/github-dark";
+
+[data-theme="light"] {
+  @import "~highlight.js/styles/github";
+}
+
 @import "components/blog";
 @import "components/404";

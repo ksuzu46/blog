@@ -49,24 +49,26 @@
 
 .image {
   padding: 15px;
-  background: $section;
+  background: var(--color-section);
   border-radius: 50%;
   position: relative;
+  transition: background-color 0.3s;
 
   img {
     position: relative;
-    background: $section;
+    background: var(--color-section);
     display: block;
     z-index: 2;
+    transition: background-color 0.3s;
   }
 }
 
 .active {
   .image {
-    background: lighten($section, 10%);
+    background: var(--color-section-light);
 
     img {
-      background: lighten($section, 10%);
+      background: var(--color-section-light);
     }
   }
 }
@@ -76,7 +78,7 @@
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.5px;
-  color: darken($primary, 10%);
+  color: var(--color-text-dim);
 
   @include media-breakpoint-down(xs) {
     font-size: 12px;

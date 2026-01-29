@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import ThemeToggle from '@/components/ThemeToggle'
 import { siteUrl, siteTitle, siteDescription, ghUsername } from '@/lib/constants'
 import '@/scss/styles.global.scss'
 
@@ -46,15 +47,21 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#000" />
         <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme: light)').matches){document.documentElement.setAttribute('data-theme','light')}}catch(e){}})()`,
+          }}
+        />
       </head>
       <body>
         <Header />
         {children}
         <Footer />
+        <ThemeToggle />
       </body>
     </html>
   )
