@@ -8,7 +8,7 @@ export default function Footer() {
         <a href={`${ghUrl}/blog`} rel="nofollow">
           SourceCode
         </a>
-        <div>&copy; 2020 {ghUsername}</div>
+        <div>&copy; 2020-{new Date().getFullYear()} {ghUsername}</div>
       </div>
     </div>
   )

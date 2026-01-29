@@ -27,7 +27,7 @@ export function getPostBySlug(
     if (field === 'content') {
       items[field] = content
     }
-    if (data[field]) {
+    if (data[field] !== undefined) {
       items[field] = data[field]
     }
   })

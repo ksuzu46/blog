@@ -37,4 +37,5 @@ yarn-error.log*
 .vercel
 
 .mise.toml
+.claude/
 .CLAUDE.md

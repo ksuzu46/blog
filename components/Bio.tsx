@@ -35,7 +35,7 @@ export default function Bio() {
             </a>
           </div>
           <div className={styles.link}>
-            <a className={styles.linkEmail} href={`mailto:${myEmail}`}>
+            <a href={`mailto:${myEmail}`}>
               <Image src={svgEmail} alt="Email" width={16} height={16} />
               E-mail
             </a>
