@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import twemoji from 'twemoji'
+import twemoji from '@twemoji/api'
 import LanguageLabel from './LanguageLabel'
 import DateFormatter from './DateFormatter'
 
