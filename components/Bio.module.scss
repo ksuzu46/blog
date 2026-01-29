@@ -1,4 +1,6 @@
-.bio-wrapper {
+@import '../scss/module-base';
+
+.wrapper {
   position: sticky;
   top: 3em;
   width: $bio-width;
@@ -19,23 +21,27 @@
   }
 }
 
-.avatar-image {
+.avatarImage {
   display: block;
   width: 70px;
   height: 70px;
   border-radius: 50%;
 }
 
-.bio-header {
+.header {
   display: flex;
   align-items: center;
 }
 
-.bio-name {
+.name {
   margin-left: 20px;
 
   a {
     color: $primary;
+    width: 100%;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 1.3em;
 
     &:hover {
       color: darken($primary, 10%);
@@ -48,25 +54,19 @@
       outline: none;
       box-shadow: none;
     }
-
-    width: 100%;
-    font-weight: 600;
-    letter-spacing: 1px;
-    font-size: 1.3em;
-
   }
 }
 
-.bio-main {
+.main {
   margin-top: 1em;
 }
 
-.bio-text {
+.text {
   color: lighten($primary, 5%);
   font-size: 0.92em;
 }
 
-.bio-links {
+.links {
   margin-top: 1.5em;
   display: flex;
   color: #fff;
@@ -79,15 +79,15 @@
     width: 40px;
     height: 33px;
   }
-
 }
 
-.bio-link {
+.link {
   width: 33.3%;
   display: block;
   font-weight: 600;
   font-size: 0.9em;
   line-height: 30px;
+  letter-spacing: 0.5px;
 
   a {
     color: $primary;
@@ -105,9 +105,8 @@
       box-shadow: none;
     }
   }
-  letter-spacing: 0.5px;
 }
 
-
-
-
+.linkEmail {
+  composes: link;
+}

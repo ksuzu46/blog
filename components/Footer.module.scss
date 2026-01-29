@@ -1,8 +1,10 @@
-.footer-content {
+@import '../scss/module-base';
+
+.content {
   padding: 0.1em 0;
 }
 
-.footer-inner {
+.inner {
   margin-top: 3em;
   text-align: center;
   padding: 1.5em;

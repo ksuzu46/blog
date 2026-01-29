@@ -1,0 +1,33 @@
+@import '../scss/module-base';
+
+.header {
+  width: 100%;
+  padding: 1.5rem 0;
+  background-color: $back-ground;
+  border-bottom: solid 1px $section;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.inner {
+  position: relative;
+  font-size: 200%;
+
+  a,
+  h1,
+  h3 {
+    color: $primary;
+    width: 100%;
+
+    &:hover {
+      color: darken($primary, 10%);
+      text-decoration: none;
+    }
+
+    &:active,
+    &:focus {
+      color: darken($primary, 10%);
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { myEmail } from '@/lib/constants'
+import styles from './Bio.module.scss'
 
 const author = 'ksuzu'
 const bioText = 'Junior Software Engineer'
@@ -11,30 +12,30 @@ const ghLink = 'https://github.com/ksuzu46'
 
 export default function Bio() {
   return (
-    <div className="bio-wrapper">
-      <div className="bio-header">
-        <img className="avatar-image" src={avatarUrl} alt={author} />
-        <div className="bio-name">
+    <div className={styles.wrapper}>
+      <div className={styles.header}>
+        <img className={styles.avatarImage} src={avatarUrl} alt={author} />
+        <div className={styles.name}>
           <Link href="/">{author}</Link>
         </div>
       </div>
-      <div className="bio-main">
-        <p className="bio-text">{bioText}</p>
-        <div className="bio-links">
-          <div className="bio-link">
+      <div className={styles.main}>
+        <p className={styles.text}>{bioText}</p>
+        <div className={styles.links}>
+          <div className={styles.link}>
             <a href="https://ksuzu.net">
               <img src={svgPortfolio} alt="PORTFOLIO" />
               Website
             </a>
           </div>
-          <div className="bio-link">
+          <div className={styles.link}>
             <a href={ghLink}>
               <img src={svgGitHub} alt="GitHub" />
               GitHub
             </a>
           </div>
-          <div className="bio-link">
-            <a className="bio-link--email" href={`mailto:${myEmail}`}>
+          <div className={styles.link}>
+            <a className={styles.linkEmail} href={`mailto:${myEmail}`}>
               <img src={svgEmail} alt="Email" />
               E-mail
             </a>

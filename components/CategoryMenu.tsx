@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import styles from './CategoryMenu.module.scss'
 
 const svgSchool = '/images/school.svg'
 const svgAlgo = '/images/algorithm.svg'
@@ -15,12 +16,12 @@ interface CategoryLinkProps {
 
 function CategoryLink({ catName, catIcon, catLink, path }: CategoryLinkProps) {
   return (
-    <div className={`category-item ${catLink === path ? 'active' : ''}`}>
-      <Link href={catLink} className="cat-item__link">
-        <div className="cat-item__image">
+    <div className={`${styles.item} ${catLink === path ? styles.active : ''}`}>
+      <Link href={catLink} className={styles.link}>
+        <div className={styles.image}>
           <img src={catIcon} alt={catName} />
         </div>
-        <div className="cat-item__name">{catName}</div>
+        <div className={styles.catName}>{catName}</div>
       </Link>
     </div>
   )
@@ -31,8 +32,8 @@ export default function CategoryMenu() {
   const path = router.asPath
 
   return (
-    <nav className="nav">
-      <ul className="category-item-list">
+    <nav className={styles.nav}>
+      <ul className={styles.itemList}>
         <CategoryLink catName="All" catIcon={svgAll} catLink="/" path={path} />
         <CategoryLink catName="Dev" catIcon={svgDev} catLink="/categories/dev" path={path} />
         <CategoryLink catName="Algorithm" catIcon={svgAlgo} catLink="/categories/algorithm" path={path} />

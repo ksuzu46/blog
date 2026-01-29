@@ -2,6 +2,7 @@ import Link from 'next/link'
 import twemoji from '@twemoji/api'
 import LanguageLabel from './LanguageLabel'
 import DateFormatter from './DateFormatter'
+import styles from './PostPreview.module.scss'
 
 interface PostPreviewProps {
   title: string
@@ -19,10 +20,10 @@ export default function PostPreview({ title, date, emoji, slug, lang }: PostPrev
   })
 
   return (
-    <div className="post-card-wrapper">
-      <Link href={`/${encodeURIComponent(slug)}`} className="post-card-link">
-        <div className="post-card-emoji" dangerouslySetInnerHTML={{ __html: parsedEmoji }} />
-        <div className="post-card-content">
+    <div className={styles.wrapper}>
+      <Link href={`/${encodeURIComponent(slug)}`} className={styles.link}>
+        <div className={styles.emoji} dangerouslySetInnerHTML={{ __html: parsedEmoji }} />
+        <div className={styles.content}>
           <h3>{title}</h3>
           <DateFormatter dateString={date} />
           <LanguageLabel lang={lang} />

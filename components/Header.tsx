@@ -1,11 +1,12 @@
 import Link from 'next/link'
 import ContentWrapper from './ContentWrapper'
+import styles from './Header.module.scss'
 
 export default function Header() {
   return (
-    <header className="header-tag">
+    <header className={styles.header}>
       <ContentWrapper>
-        <div className="header-inner">
+        <div className={styles.inner}>
           <h1>
             <Link href="/">{`ksuzu's blog`}</Link>
           </h1>

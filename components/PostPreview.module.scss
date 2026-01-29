@@ -1,5 +1,7 @@
-.post-card-wrapper {
-  .post-card-link {
+@import '../scss/module-base';
+
+.wrapper {
+  .link {
     display: flex;
     align-items: start;
     padding: 1.4em 0;
@@ -12,12 +14,12 @@
     }
 
     @include media-breakpoint-down(sm) {
-     padding: 1em 0;
+      padding: 1em 0;
     }
   }
 }
 
-.post-card-emoji {
+.emoji {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,6 +38,7 @@
   @include media-breakpoint-down(sm) {
     width: 70px;
     height: 70px;
+
     img {
       width: 40px;
       height: 40px;
@@ -43,7 +46,7 @@
   }
 }
 
-.post-card-content {
+.content {
   width: calc(100% - 90px);
   padding-left: 20px;
 
@@ -64,9 +67,11 @@
   @include media-breakpoint-down(sm) {
     width: calc(100% - 70px);
     padding-left: 15px;
+
     h3 {
       font-size: 16.5px;
     }
+
     time {
       font-size: 12px;
     }

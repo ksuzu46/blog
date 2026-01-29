@@ -1,0 +1,84 @@
+@import '../scss/module-base';
+
+.nav {
+  display: block;
+  margin: 0;
+  padding: 0 0 2em;
+
+  @include media-breakpoint-down(xs) {
+    padding: 1em 0;
+  }
+}
+
+.itemList {
+  display: flex;
+
+  @include media-breakpoint-down(xs) {
+    margin: 0 -20px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    &:after {
+      content: '';
+      width: 40px;
+      flex: 0 0 auto;
+    }
+  }
+}
+
+.item {
+  width: 80px;
+  margin: 0 20px 0 0;
+  text-align: center;
+
+  @include media-breakpoint-down(xs) {
+    width: 60px;
+    flex: 0 0 auto;
+    margin: 0 0 0 15px;
+  }
+}
+
+.link {
+  color: #fff;
+}
+
+.image {
+  padding: 15px;
+  background: $section;
+  border-radius: 50%;
+  position: relative;
+
+  img {
+    position: relative;
+    background: $section;
+    display: block;
+    z-index: 2;
+  }
+}
+
+.active {
+  .image {
+    background: lighten($section, 10%);
+
+    img {
+      background: lighten($section, 10%);
+    }
+  }
+}
+
+.catName {
+  margin-top: 5px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: darken($primary, 10%);
+
+  @include media-breakpoint-down(xs) {
+    font-size: 12px;
+  }
+}

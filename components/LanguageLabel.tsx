@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import styles from './LanguageLabel.module.scss'
 
 interface LanguageLabelProps {
   lang: string
@@ -9,8 +10,8 @@ export default function LanguageLabel({ lang }: LanguageLabelProps) {
 
   return (
     <Link href={`/languages/${lang}`}>
-      <div className="label-wrapper">
-        <div className="label-text" style={{ background: labelColor }}>
+      <div className={styles.wrapper}>
+        <div className={styles.text} style={{ background: labelColor }}>
           {lang.toUpperCase()}
         </div>
       </div>
