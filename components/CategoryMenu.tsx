@@ -1,5 +1,7 @@
+'use client'
+
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 import styles from './CategoryMenu.module.scss'
 
 const svgSchool = '/images/school.svg'
@@ -28,8 +30,7 @@ function CategoryLink({ catName, catIcon, catLink, path }: CategoryLinkProps) {
 }
 
 export default function CategoryMenu() {
-  const router = useRouter()
-  const path = router.asPath
+  const path = usePathname()
 
   return (
     <nav className={styles.nav}>
