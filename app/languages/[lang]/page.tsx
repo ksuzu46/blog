@@ -28,6 +28,7 @@ export default async function LanguagePage({ params }: { params: Promise<{ lang:
     'category',
     'emoji',
     'lang',
+    'excerpt',
   ])
   const postsByLanguage = getPostsByLanguage(lang, allPosts)
 

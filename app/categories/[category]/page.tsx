@@ -28,6 +28,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
     'category',
     'emoji',
     'lang',
+    'excerpt',
   ])
   const postsByCategory = getPostsByCategory(category, allPosts)
 

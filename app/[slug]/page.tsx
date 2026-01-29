@@ -10,6 +10,7 @@ import Bio from '@/components/Bio'
 import CategoryMenu from '@/components/CategoryMenu'
 import TableOfContents from '@/components/TableOfContents'
 import PostNavigation from '@/components/PostNavigation'
+import ShareButtons from '@/components/ShareButtons'
 import { siteUrl, ghUsername } from '@/lib/constants'
 
 export function generateStaticParams() {
@@ -86,6 +87,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             />
             <TableOfContents />
             <PostBody content={content} />
+            <ShareButtons url={`${siteUrl}/${slug}`} title={post.title!} />
             <PostNavigation prev={prev} next={next} />
           </div>
         </div>

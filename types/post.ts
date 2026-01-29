@@ -6,4 +6,5 @@ export interface Post {
   emoji: string
   lang: string
   content: string
+  excerpt: string
 }

@@ -32,6 +32,11 @@ export function getPostBySlug(
     }
   })
 
+  if (fields.includes('excerpt') && !items.excerpt) {
+    const plain = content.replace(/[#*`>\[\]()-]/g, '').replace(/\s+/g, ' ').trim()
+    items.excerpt = plain.slice(0, 160) + (plain.length > 160 ? '...' : '')
+  }
+
   return items
 }
 
